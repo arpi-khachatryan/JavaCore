@@ -17,9 +17,7 @@ public class ArrayUtil {
                 k++;
             }
         }
-        for (int j = 0; j < 1; j++) {
-            System.out.println(array[k]);
-        }
+        System.out.println(array[k]);
 
         // third
         int z = 0;
@@ -29,9 +27,7 @@ public class ArrayUtil {
                 i--;
             }
         }
-        for (int j = 0; j < 1; j++) {
-            System.out.println(array[z]);
-        }
+        System.out.println(array[z]);
 
         // fourth
         for (int i = 0; i < array.length; i++) {
@@ -56,9 +52,7 @@ public class ArrayUtil {
                 result += 1;
             }
         }
-        for (int i = 0; i < 1; i++) {
-            System.out.println(result);
-        }
+        System.out.println(result);
 
         // seventh
         int result_ = 0;
@@ -67,9 +61,7 @@ public class ArrayUtil {
                 result_ += 1;
             }
         }
-        for (int i = 0; i < 1; i++) {
-            System.out.println(result_);
-        }
+        System.out.println(result_);
 
         // eighth
         int result__ = 0;
