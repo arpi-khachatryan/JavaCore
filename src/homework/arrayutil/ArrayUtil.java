@@ -57,9 +57,8 @@ public class ArrayUtil {
             }
         }
         for (int i = 0; i < 1; i++) {
-            System.out.print(result);
+            System.out.println(result);
         }
-        System.out.println();
 
         // seventh
         int result_ = 0;
@@ -69,9 +68,8 @@ public class ArrayUtil {
             }
         }
         for (int i = 0; i < 1; i++) {
-            System.out.print(result_);
+            System.out.println(result_);
         }
-        System.out.println();
 
         // eighth
         int result__ = 0;
@@ -85,7 +83,7 @@ public class ArrayUtil {
         for (int i = 0; i < array.length; i++) {
             result___ += array[i];
         }
-        System.out.print(result___);
+        System.out.println(result___);
     }
 }
 
