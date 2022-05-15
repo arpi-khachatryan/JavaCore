@@ -2,7 +2,7 @@ package homework.arrayutil;
 
 public class ArrayUtil {
     public static void main(String[] args) {
-        int[] array = {9, 5, 7, 1, 90, 80, 20, 8, 10, 2};
+        int[] array = {9, 5, 0, 4, 90, 80, 20, 1, 100, 89};
 
         // first
         for (int i = 0; i < array.length; i++) {
@@ -15,14 +15,15 @@ public class ArrayUtil {
         for (int i = 1; i < array.length; i++) {
             if (array[k] < array[i]) {
                 k++;
+                i--;
             }
         }
         System.out.println(array[k]);
 
         // third
-        int z = 0;
-        for (int i = 1; i < array.length; i++) {
-            if (array[z] > array[i]) {
+        int z = 1;
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] < array[z]) {
                 z++;
                 i--;
             }
@@ -46,36 +47,36 @@ public class ArrayUtil {
         System.out.println();
 
         // sixth
-        int result = 0;
+        int even = 0;
         for (int i = 0; i < array.length; i++) {
             if (array[i] % 2 == 0) {
-                result += 1;
+                even += 1;
             }
         }
-        System.out.println(result);
+        System.out.println(even);
 
         // seventh
-        int result_ = 0;
+        int odd = 0;
         for (int i = 0; i < array.length; i++) {
             if (array[i] % 2 != 0) {
-                result_ += 1;
+                odd += 1;
             }
         }
-        System.out.println(result_);
+        System.out.println(odd);
 
         // eighth
-        int result__ = 0;
+        int average = 0;
         for (int i = 0; i < array.length; i++) {
-            result__ += array[i];
+            average += array[i];
         }
-        System.out.println(result__ / array.length);
+        System.out.println(average / array.length);
 
         // ninth
-        int result___ = 0;
+        int sum = 0;
         for (int i = 0; i < array.length; i++) {
-            result___ += array[i];
+            sum += array[i];
         }
-        System.out.println(result___);
+        System.out.println(sum);
     }
 }
 
