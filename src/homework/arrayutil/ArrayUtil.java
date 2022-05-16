@@ -2,7 +2,7 @@ package homework.arrayutil;
 
 public class ArrayUtil {
     public static void main(String[] args) {
-        int[] array = {9, 5, 0, 4, 90, 80, 20, 1, 100, 89};
+        int[] array = {9, 5, 101, 0, 90, 84, 20, 1, 7, 42};
 
         // first
         for (int i = 0; i < array.length; i++) {
@@ -18,17 +18,18 @@ public class ArrayUtil {
                 i--;
             }
         }
-        System.out.println(array[k]);
+        System.out.println("Ամենամեծ թիվը՝ " + array[k]);
 
         // third
-        int z = 1;
+        int z = 0;
         for (int i = 0; i < array.length; i++) {
-            if (array[i] < array[z]) {
-                z++;
-                i--;
+            for (int j = 0; j < i; j++) {
+                if (array[i] < array[z]) {
+                    z++;
+                }
             }
         }
-        System.out.println(array[z]);
+        System.out.println("Ամենափոքր թիվը՝ " + array[z]);
 
         // fourth
         for (int i = 0; i < array.length; i++) {
@@ -53,7 +54,7 @@ public class ArrayUtil {
                 even += 1;
             }
         }
-        System.out.println(even);
+        System.out.println("Զույգ թվերի քանակը՝ " + even);
 
         // seventh
         int odd = 0;
@@ -62,23 +63,24 @@ public class ArrayUtil {
                 odd += 1;
             }
         }
-        System.out.println(odd);
+        System.out.println("Կենտ թվերի քանակը՝ " + odd);
 
         // eighth
         int average = 0;
         for (int i = 0; i < array.length; i++) {
             average += array[i];
         }
-        System.out.println(average / array.length);
+        System.out.println("Բոլոր թվերի միջին թվաբանականը՝ " + average / array.length);
 
         // ninth
         int sum = 0;
         for (int i = 0; i < array.length; i++) {
             sum += array[i];
         }
-        System.out.println(sum);
+        System.out.println("Էլեմենտների գումարը՝ " + sum);
     }
 }
+
 
 
 
