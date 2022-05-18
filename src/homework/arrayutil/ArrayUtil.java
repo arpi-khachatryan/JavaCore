@@ -2,9 +2,10 @@ package homework.arrayutil;
 
 public class ArrayUtil {
     public static void main(String[] args) {
-        int[] array = {9, 5, 101, 0, 90, 84, 20, 1, 7, 42};
+        int[] array = {9, 6, 100, 0, 90, 84, 20, 1, 10, 40};
 
         // first
+        System.out.print("Մասիվի բոլոր էլեմենտները՝" + " ");
         for (int i = 0; i < array.length; i++) {
             System.out.print(array[i] + " ");
         }
@@ -31,7 +32,17 @@ public class ArrayUtil {
         }
         System.out.println("Ամենափոքր թիվը՝ " + array[z]);
 
+        // or
+        int min = array[0];
+        for (int i = 1; i < array.length; i++) {
+            if (array[i] < min) {
+                min = array[i];
+            }
+        }
+        System.out.println("Ամենափոքր թիվը՝ " + min);
+
         // fourth
+        System.out.print("Զույգ էլեմենտները՝" + " ");
         for (int i = 0; i < array.length; i++) {
             if (array[i] % 2 == 0) {
                 System.out.print(array[i] + " ");
@@ -40,6 +51,7 @@ public class ArrayUtil {
         System.out.println();
 
         // fifth
+        System.out.print("Կենտ էլեմենտները՝" + " ");
         for (int i = 0; i < array.length; i++) {
             if (array[i] % 2 != 0) {
                 System.out.print(array[i] + " ");
@@ -80,6 +92,7 @@ public class ArrayUtil {
         System.out.println("Էլեմենտների գումարը՝ " + sum);
     }
 }
+
 
 
 
