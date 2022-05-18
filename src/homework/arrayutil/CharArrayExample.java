@@ -3,7 +3,7 @@ package homework.arrayutil;
 public class CharArrayExample {
     public static void main(String[] args) {
 
-        //first
+        // first
         char[] chars = {'i', 'a', 'v', 'a', 'l', 'o', 'v', 'e'};
         char c = 'o';
         int count = 0;
@@ -14,11 +14,11 @@ public class CharArrayExample {
         }
         System.out.println(count);
 
-        //second
+        // second
         char[] chars2 = {'i', 'a', 'v', 'a', 'l', 'o', 'v', 'e'};
         System.out.println(chars2[chars2.length / 2 - 1] + " " + chars2[chars2.length / 2]);
 
-        //third
+        // third
         char[] chars3 = {'i', 'a', 'v', 'a', 'l', 'o', 'l', 'y'};
         if (chars3[chars3.length - 2] == 'l' && chars3[chars3.length - 1] == 'y') {
             System.out.println("true");
@@ -26,15 +26,19 @@ public class CharArrayExample {
             System.out.println("false");
         }
 
-        //forth
+        // forth
         char[] bobArray = {'b', 'a', 'b', 'o', 'l', 'a'};
-        if (bobArray[0] == 'b' && bobArray[2] == 'b') {
-            System.out.println(true);
+        if (bobArray[0] == 'b') {
+            if (bobArray[0] == bobArray[2]) {
+                System.out.println(true);
+            } else {
+                System.out.println(false);
+            }
         } else {
             System.out.println(false);
         }
 
-        //fifth
+        // fifth
         char[] text = {' ', ' ', 'b', 'a', 'r', 'e', 'v', ' ', ' '};
         for (int i = 0; i < text.length; i++) {
             if (text[i] != ' ') {
@@ -43,6 +47,5 @@ public class CharArrayExample {
         }
     }
 }
-
 
 
