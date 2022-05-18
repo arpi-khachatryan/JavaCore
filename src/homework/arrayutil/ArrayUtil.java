@@ -12,14 +12,14 @@ public class ArrayUtil {
         System.out.println();
 
         // second
-        int k = 0;
+        int max = 0;
         for (int i = 1; i < array.length; i++) {
-            if (array[k] < array[i]) {
-                k++;
+            if (array[max] < array[i]) {
+                max++;
                 i--;
             }
         }
-        System.out.println("Ամենամեծ թիվը՝ " + array[k]);
+        System.out.println("Ամենամեծ թիվը՝ " + array[max]);
 
         // third
         int z = 0;
