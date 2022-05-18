@@ -13,10 +13,10 @@ public class IfElse {
         } else if (month == 9 || month == 10 || month == 11) {
             season = "աշնանային";
         } else {
-            season = "այդպիսի ամիս չկա";
+            season = "գոյություն չունեցող";
         }
-        System.out.println("Ապրիլը համարվում է "
-                + season + " ամիս:");
+        System.out.println("Ապրիլը "
+                + season + " ամիս է");
     }
 }
 
