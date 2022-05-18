@@ -28,11 +28,7 @@ public class CharArrayExample {
 
         //forth
         char[] bobArray = {'b', 'a', 'b', 'o', 'l', 'a'};
-        int bob = 0;
-        if (bobArray[bob] == 'b') {
-            bob += 2;
-        }
-        if (bobArray[bob] == 'b') {
+        if (bobArray[0] == 'b' && bobArray[2] == 'b') {
             System.out.println(true);
         } else {
             System.out.println(false);
