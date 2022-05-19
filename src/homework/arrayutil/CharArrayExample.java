@@ -28,14 +28,13 @@ public class CharArrayExample {
 
         // forth
         char[] bobArray = {'b', 'a', 'b', 'o', 'l', 'a'};
-        if (bobArray[0] == 'b') {
-            if (bobArray[0] == bobArray[2]) {
+        char name = 'b';
+        for (int i = 0; i < bobArray.length - 2; i++) {
+            if (bobArray[i] == name && bobArray[i + 2] == name) {
                 System.out.println(true);
-            } else {
-                System.out.println(false);
-            }
-        } else {
-            System.out.println(false);
+                break;
+            } else
+                System.out.println("false");
         }
 
         // fifth
@@ -47,5 +46,7 @@ public class CharArrayExample {
         }
     }
 }
+
+
 
 
