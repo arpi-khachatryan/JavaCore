@@ -33,8 +33,9 @@ public class CharArrayExample {
             if (bobArray[i] == name && bobArray[i + 2] == name) {
                 System.out.println("true");
                 break;
-            } else
+            } else {
                 System.out.println("false");
+            }
         }
 
         // fifth
