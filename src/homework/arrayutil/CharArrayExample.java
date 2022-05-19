@@ -31,7 +31,7 @@ public class CharArrayExample {
         char name = 'b';
         for (int i = 0; i < bobArray.length - 2; i++) {
             if (bobArray[i] == name && bobArray[i + 2] == name) {
-                System.out.println(true);
+                System.out.println("true");
                 break;
             } else
                 System.out.println("false");
@@ -46,6 +46,7 @@ public class CharArrayExample {
         }
     }
 }
+
 
 
 
