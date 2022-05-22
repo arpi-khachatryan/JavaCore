@@ -5,7 +5,10 @@ public class Return {
         boolean t = true;
         System.out.println("Մինչեւ վերադարձնելը");
         if (t) return;
-        System.out.println("Այս օպերատորը չի աշխատի");
+        {
+            System.out.println("Այս օպերատորը չի աշխատի");
+        }
     }
 }
+
 
