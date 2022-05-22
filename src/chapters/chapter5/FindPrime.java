@@ -10,7 +10,7 @@ public class FindPrime {
         } else {
             isPrime = true;
         }
-        for (int i = 2; i <= num; i++) {
+        for (int i = 2; i <= num / i; i++) {
             if ((num % i) == 0) {
                 isPrime = false;
                 break;
