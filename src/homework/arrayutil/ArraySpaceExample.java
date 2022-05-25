@@ -16,6 +16,39 @@ public class ArraySpaceExample {
                 }
             }
         }
+
+        // or
+        System.out.println();
+
+        int startIndex = 0;
+        int endIndex = spaceArray.length - 1;
+
+        for (int i = 0; i < spaceArray.length; i++) {
+            if (spaceArray[startIndex] == ' ') {
+                startIndex++;
+            } else {
+                break;
+            }
+        }
+
+        for (int i = endIndex; i > 0; i--) {
+            if (spaceArray[endIndex] == ' ') {
+                endIndex--;
+            } else {
+                break;
+            }
+        }
+
+        int newlength = endIndex - startIndex + 1;
+        char[] result = new char[newlength];
+        int x = 0;
+        for (int i = startIndex; i <= endIndex; i++) {
+            result[x++] = spaceArray[i];
+        }
+
+        for (char i : result) {
+            System.out.print(i);
+        }
     }
 }
 
