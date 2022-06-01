@@ -5,6 +5,7 @@ public class ArrayUtil2Demo {
         ArrayUtil2 au = new ArrayUtil2();
         int[] numbers = {9, 6, 100, 0, 90, 84, 20, 1, 10, 40};
 
+
         System.out.print("Մասիվի բոլոր էլեմենտները՝" + " ");
         au.allArray(numbers);
         System.out.println();
