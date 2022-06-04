@@ -4,7 +4,7 @@ public class PracticeHomework {
 
     //փոխակերպել տրված րոպեն վայրկյանի ու վերադարձնել
     long convert(int minutes) {
-        return minutes * 60;
+        return (long) minutes * 60;
     }
 
     //ընդունել տարին, վերադարձնել օրերի քանակը
