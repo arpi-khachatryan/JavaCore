@@ -1,13 +1,27 @@
 package chapters.chapter7;
 
 public class OverloadCons {
-    public static void main(String[] args) {
-        Box mybox1 = new Box(10, 20, 15);
-        Box mybox2 = new Box();
-        Box mycube = new Box(7);
+    double width;
+    double height;
+    double depth;
 
-        System.out.println(mybox1.volume());
-        System.out.println(mybox2.volume());
-        System.out.println(mycube.volume());
+    OverloadCons(double w, double h, double d) {
+        width = w;
+        height = h;
+        depth = d;
+    }
+
+    OverloadCons() {
+        width = -1;
+        height = -1;
+        depth = -1;
+    }
+
+    OverloadCons(double len) {
+        width = height = depth = len;
+    }
+
+    double volume() {
+        return width * height * depth;
     }
 }
