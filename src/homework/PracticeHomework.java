@@ -4,14 +4,12 @@ public class PracticeHomework {
 
     //փոխակերպել տրված րոպեն վայրկյանի ու վերադարձնել
     long convert(int minutes) {
-        int seconds = 0;
-        return minutes >= 1 ? seconds = minutes * 60 : seconds;
+        return minutes * 60;
     }
 
     //ընդունել տարին, վերադարձնել օրերի քանակը
     int calcAge(int years) {
-        int days = 0;
-        return years >= 1 ? days = years * 365 : days;
+        return years * 365;
     }
 
     //վերադարձնել տրված թվի հաջորդ թիվը
@@ -21,14 +19,12 @@ public class PracticeHomework {
 
     //վերդարձնել true,եթե տրված a եւ b թվերը իրար հավասար են, եթե ոչ՝ false
     boolean isSameNum(int a, int b) {
-        boolean t = false;
-        return a == b ? t = true : t;
+        return a == b;
     }
 
     //վերդարձնել true,եթե տրված թիվը փոքր կամ հավասար է 0-ի, մնացած դեպքերում՝ false
     boolean lessThanOrEqualToZero(int number) {
-        boolean t = false;
-        return number <= 0 ? t = true : t;
+        return number <= 0;
     }
 
     //վարադարձնել ընդունող բուլյանի ժխտված արժեքը
@@ -38,7 +34,6 @@ public class PracticeHomework {
 
     //վերադարձնել երկու մասիվի ամենամեծ length-ը
     int maxLength(int[] array1, int[] array2) {
-        int length = 0;
-        return array1.length > array2.length ? length = array1.length : array2.length;
+        return array1.length > array2.length ? array1.length : array2.length;
     }
 }
