@@ -6,7 +6,7 @@ public class OverloadConsDemo {
         Box mybox2 = new Box();
         Box mycube = new Box(7);
 
-        System.out.println(mybox1.volume());
+        System.out.println(mybox2.volume());
         System.out.println(mybox2.volume());
         System.out.println(mycube.volume());
     }
