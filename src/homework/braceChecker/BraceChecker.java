@@ -20,20 +20,26 @@ public class BraceChecker {
 
         }
 
-        char[] l = stack.stck;
+        char[] newChar = stack.stck;
         stack.pop();
         for (int i = 0; i < stack.index; i++) {
 
-            if (l[i] == '{' & l[++i] == '}') {
-                System.out.println("Opened " + l[--i] + " and closed " + l[++i]);
+            if (newChar[i] == '{' & newChar[++i] == '}') {
+                System.out.println("Opened " + newChar[--i] + " and closed " + newChar[++i]);
             } else {
-                System.out.println("Error: opened " + l[--i] + " but closed " + l[++i] + " at " + i);
+                System.out.println("Error: opened " + newChar[--i] + " but closed " + newChar[++i] + " at " + i);
             }
 
-            if (l[i] == '(' & l[++i] == ')') {
-                System.out.println("Opened " + l[--i] + " and closed " + l[++i]);
+            if (newChar[i] == '(' & newChar[++i] == ')') {
+                System.out.println("Opened " + newChar[--i] + " and closed " + newChar[++i]);
             } else {
-                System.out.println("Error: opened " + l[--i] + " but closed " + l[++i] + " at " + i);
+                System.out.println("Error: opened " + newChar[--i] + " but closed " + newChar[++i] + " at " + i);
+            }
+
+            if (newChar[i] == '[' & newChar[++i] == ']') {
+                System.out.println("Opened " + newChar[--i] + " and closed " + newChar[++i]);
+            } else {
+                System.out.println("Error: opened " + newChar[--i] + " but closed " + newChar[++i] + " at " + i);
             }
         }
     }
