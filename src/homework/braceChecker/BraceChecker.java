@@ -1,7 +1,4 @@
-package homework;
-
-
-import chapters.chapter7.StackClass;
+package homework.braceChecker;
 
 public class BraceChecker {
     private String text;
@@ -28,6 +25,7 @@ public class BraceChecker {
         }
     }
 }
+
 
 
 
