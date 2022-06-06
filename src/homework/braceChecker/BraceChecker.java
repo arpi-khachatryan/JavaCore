@@ -10,24 +10,34 @@ public class BraceChecker {
 
     public void check(StackClass stack) {
         char[] chars = text.toCharArray();
+        String text = this.text;
+
         for (int i = 0; i < chars.length; i++) {
-            if (chars[i] == '[' | chars[i] == ']' | chars[i] == ')') {
-                stack.push(i);
+            char c = text.charAt(i);
+            if (c == '[' | c == ']' | c == ')' | c == '(' | c == '{' | c == '}') {
+                stack.push(c);
             }
-            if (chars[i] == ']') {
-                stack.pop();
-                System.out.println("Opened [ and closed ]");
+
+        }
+
+        char[] l = stack.stck;
+        stack.pop();
+        for (int i = 0; i < stack.index; i++) {
+
+            if (l[i] == '{' & l[++i] == '}') {
+                System.out.println("Opened " + l[--i] + " and closed " + l[++i]);
+            } else {
+                System.out.println("Error: opened " + l[--i] + " but closed " + l[++i] + " at " + i);
             }
-            if (chars[i] == ')') {
-                stack.pop();
-                System.out.println("Error: opened [ but closed ) at " + i);
+
+            if (l[i] == '(' & l[++i] == ')') {
+                System.out.println("Opened " + l[--i] + " and closed " + l[++i]);
+            } else {
+                System.out.println("Error: opened " + l[--i] + " but closed " + l[++i] + " at " + i);
             }
         }
     }
 }
-
-
-
 
 
 
