@@ -24,7 +24,7 @@ public class BraceChecker {
             stack.pop();
             if (newChars[stack.index] == '[') {
             } else {
-                System.out.println("Error: opened " + newChars[--stack.index] + " closed at  } " + ++stack.index);
+                System.out.println("Error: opened " + newChars[--stack.index] + " closed at  ] " + ++stack.index);
             }
 
             stack.pop();
@@ -39,7 +39,7 @@ public class BraceChecker {
                 if (newChars[stack.index] == ')') {
                     if (newChars[stack.index] == '(') {
                     } else {
-                        System.out.println("Error: opened " + newChars[--stack.index] + " closed at  } " + ++stack.index);
+                        System.out.println("Error: opened " + newChars[--stack.index] + " closed at  ) " + ++stack.index);
                     }
                 }
             }
