@@ -2,7 +2,7 @@ package homework.braceChecker;
 
 public class StackClass {
     public char[] stck = new char[25];
-    public int index = -1;
+    public int index = 0;
 
     public void push(char volume) {
         if (index == stck.length) {
@@ -19,6 +19,7 @@ public class StackClass {
             return 0;
         } else {
             return stck[index--];
+
         }
     }
 }
