@@ -1,7 +1,7 @@
 package homework.braceChecker;
 
 public class StackClass {
-    public char[] stck = new char[10];
+    public char[] stck = new char[25];
     public int index = -1;
 
     public void push(char volume) {
