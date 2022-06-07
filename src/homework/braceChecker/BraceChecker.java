@@ -28,12 +28,12 @@ public class BraceChecker {
                     --stack.index;
                 }
                 if (newChars[stack.index] == '(') {
-                    System.out.println("Error: opened " + newChars[stack.index] + " and closed " + newChars[++stack.index] + " at " + stack.index);
-                    stack.index -= 2;
+                    System.out.println("Error: opened " + newChars[stack.index] + " and closed " + newChars[++stack.index] + " at " + --stack.index);
+                    stack.index -= 1;
                 }
                 if (newChars[stack.index] == '{') {
-                    System.out.println("Error: opened " + newChars[stack.index] + " and closed " + newChars[++stack.index] + " at " + stack.index);
-                    stack.index -= 2;
+                    System.out.println("Error: opened " + newChars[stack.index] + " and closed " + newChars[++stack.index] + " at " + --stack.index);
+                    stack.index -= 1;
                 }
             }
 
@@ -43,12 +43,12 @@ public class BraceChecker {
                     --stack.index;
                 }
                 if (newChars[stack.index] == '{') {
-                    System.out.println("Error: opened " + newChars[stack.index] + " and closed " + newChars[++stack.index] + " at " + stack.index);
-                    stack.index -= 2;
+                    System.out.println("Error: opened " + newChars[stack.index] + " and closed " + newChars[++stack.index] + " at " + --stack.index);
+                    stack.index -= 1;
                 }
                 if (newChars[stack.index] == '[') {
-                    System.out.println("Error: opened " + newChars[stack.index] + " and closed " + newChars[++stack.index] + " at " + stack.index);
-                    stack.index -= 2;
+                    System.out.println("Error: opened " + newChars[stack.index] + " and closed " + newChars[++stack.index] + " at " + --stack.index);
+                    stack.index -= 1;
                 }
             }
 
@@ -58,12 +58,12 @@ public class BraceChecker {
                     --stack.index;
                 }
                 if (newChars[stack.index] == '(') {
-                    System.out.println("Error: opened " + newChars[stack.index] + " and closed " + newChars[++stack.index] + " at " + stack.index);
-                    stack.index -= 2;
+                    System.out.println("Error: opened " + newChars[stack.index] + " and closed " + newChars[++stack.index] + " at " + --stack.index);
+                    stack.index -= 1;
                 }
                 if (newChars[stack.index] == '[') {
-                    System.out.println("Error: opened " + newChars[stack.index] + " and closed " + newChars[++stack.index] + " at " + stack.index);
-                    stack.index -= 2;
+                    System.out.println("Error: opened " + newChars[stack.index] + " and closed " + newChars[++stack.index] + " at " + --stack.index);
+                    stack.index -= 1;
                 }
             }
         }
