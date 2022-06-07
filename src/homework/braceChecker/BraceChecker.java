@@ -17,33 +17,34 @@ public class BraceChecker {
             if (c == '[' | c == ']' | c == ')' | c == '(' | c == '{' | c == '}') {
                 stack.push(c);
             }
-
         }
 
-        char[] newChar = stack.stck;
-        stack.pop();
-        for (int i = 0; i < stack.index; i++) {
-
-            if (newChar[i] == '{' & newChar[++i] == '}') {
-                System.out.println("Opened " + newChar[--i] + " and closed " + newChar[++i]);
+        char[] newChars = stack.stck;
+        if (newChars[stack.index] == ']') {
+            stack.pop();
+            if (newChars[stack.index] == '[') {
             } else {
-                System.out.println("Error: opened " + newChar[--i] + " but closed " + newChar[++i] + " at " + i);
+                System.out.println("Error: opened " + newChars[--stack.index] + " closed at  } " + ++stack.index);
             }
 
-            if (newChar[i] == '(' & newChar[++i] == ')') {
-                System.out.println("Opened " + newChar[--i] + " and closed " + newChar[++i]);
-            } else {
-                System.out.println("Error: opened " + newChar[--i] + " but closed " + newChar[++i] + " at " + i);
-            }
+            stack.pop();
+            if (newChars[stack.index] == '}') {
+                if (newChars[stack.index] == '{') {
+                } else {
+                    System.out.println("Error: opened " + newChars[--stack.index] + " closed at  } " + ++stack.index);
 
-            if (newChar[i] == '[' & newChar[++i] == ']') {
-                System.out.println("Opened " + newChar[--i] + " and closed " + newChar[++i]);
-            } else {
-                System.out.println("Error: opened " + newChar[--i] + " but closed " + newChar[++i] + " at " + i);
+                }
+
+                stack.pop();
+                if (newChars[stack.index] == ')') {
+                    if (newChars[stack.index] == '(') {
+                    } else {
+                        System.out.println("Error: opened " + newChars[--stack.index] + " closed at  } " + ++stack.index);
+                    }
+                }
             }
         }
     }
 }
-
 
 
