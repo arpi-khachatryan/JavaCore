@@ -19,7 +19,6 @@ public class StackClass {
             return 0;
         } else {
             return stck[index--];
-
         }
     }
 }
