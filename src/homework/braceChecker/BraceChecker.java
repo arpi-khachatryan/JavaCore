@@ -10,8 +10,6 @@ public class BraceChecker {
 
     public void check(StackClass stack) {
         char[] chars = text.toCharArray();
-        String text = this.text;
-
         for (int i = 0; i < chars.length; i++) {
             char c = text.charAt(i);
             if (c == '[' | c == ']' | c == ')' | c == '(' | c == '{' | c == '}') {
