@@ -9,6 +9,7 @@ public class StackClass {
             System.out.println("Stack is full");
         } else {
             stck[++index] = volume;
+
         }
     }
 
@@ -18,7 +19,6 @@ public class StackClass {
             return 0;
         } else {
             return stck[index--];
-
         }
     }
 }
