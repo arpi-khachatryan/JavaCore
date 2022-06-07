@@ -20,31 +20,61 @@ public class BraceChecker {
         }
 
         char[] newChars = stack.stck;
-        if (newChars[stack.index] == ']') {
-            stack.pop();
-            if (newChars[stack.index] == '[') {
-            } else {
-                System.out.println("Error: opened " + newChars[--stack.index] + " closed at  ] " + ++stack.index);
+        while (newChars.length > 0) {
+
+            if (newChars[stack.index] == ']') {
+                stack.pop();
+                if (newChars[stack.index] == '[') {
+                    --stack.index;
+                }
+                if (newChars[stack.index] == '(') {
+                    System.out.println("Error: opened " + newChars[stack.index] + " and closed " + newChars[++stack.index] + " at " + stack.index);
+                    stack.index -= 2;
+                }
+                if (newChars[stack.index] == '{') {
+                    System.out.println("Error: opened " + newChars[stack.index] + " and closed " + newChars[++stack.index] + " at " + stack.index);
+                    stack.index -= 2;
+                }
             }
 
-            stack.pop();
-            if (newChars[stack.index] == '}') {
-                if (newChars[stack.index] == '{') {
-                } else {
-                    System.out.println("Error: opened " + newChars[--stack.index] + " closed at  } " + ++stack.index);
-
-                }
-
+            if (newChars[stack.index] == ')') {
                 stack.pop();
-                if (newChars[stack.index] == ')') {
-                    if (newChars[stack.index] == '(') {
-                    } else {
-                        System.out.println("Error: opened " + newChars[--stack.index] + " closed at  ) " + ++stack.index);
-                    }
+                if (newChars[stack.index] == '(') {
+                    --stack.index;
+                }
+                if (newChars[stack.index] == '{') {
+                    System.out.println("Error: opened " + newChars[stack.index] + " and closed " + newChars[++stack.index] + " at " + stack.index);
+                    stack.index -= 2;
+                }
+                if (newChars[stack.index] == '[') {
+                    System.out.println("Error: opened " + newChars[stack.index] + " and closed " + newChars[++stack.index] + " at " + stack.index);
+                    stack.index -= 2;
+                }
+            }
+
+            if (newChars[stack.index] == '}') {
+                stack.pop();
+                if (newChars[stack.index] == '{') {
+                    --stack.index;
+                }
+                if (newChars[stack.index] == '(') {
+                    System.out.println("Error: opened " + newChars[stack.index] + " and closed " + newChars[++stack.index] + " at " + stack.index);
+                    stack.index -= 2;
+                }
+                if (newChars[stack.index] == '[') {
+                    System.out.println("Error: opened " + newChars[stack.index] + " and closed " + newChars[++stack.index] + " at " + stack.index);
+                    stack.index -= 2;
                 }
             }
         }
     }
 }
+
+
+
+
+
+
+
 
 
