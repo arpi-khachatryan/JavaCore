@@ -2,12 +2,14 @@ package homework.braceChecker;
 
 public class BraceChecker {
     private String text;
+    StackClass stack=new StackClass();
 
     public BraceChecker(String text) {
+
         this.text = text;
     }
 
-    public void check(StackClass stack) {
+    public void check() {
         char[] chars = text.toCharArray();
         for (int i = 0; i < chars.length; i++) {
             char c = text.charAt(i);
@@ -17,7 +19,7 @@ public class BraceChecker {
         }
 
         char[] newChars = stack.stck;
-        while (newChars.length > 0) {
+        while (stack.index > 0) {
 
             if (newChars[stack.index] == ']') {
                 stack.pop();
