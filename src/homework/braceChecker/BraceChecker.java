@@ -84,6 +84,10 @@ public class BraceChecker {
                     --stack.index;
                 }
             }
+
+            if (newChars[stack.index] == '[' | newChars[stack.index] == '(' | newChars[stack.index] == '{') {
+                System.out.println("Error: opened " + newChars[stack.index] + " at " + --stack.index + " but not closed");
+            }
         }
     }
 }
