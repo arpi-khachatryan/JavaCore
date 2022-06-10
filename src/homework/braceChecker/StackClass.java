@@ -4,6 +4,7 @@ public class StackClass {
     public char[] stck = new char[30];
     public int index = 0;
 
+
     public void push(char volume) {
         if (index == stck.length) {
             System.out.println("Stack is full");
