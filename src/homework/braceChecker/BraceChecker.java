@@ -5,7 +5,6 @@ public class BraceChecker {
 
     public BraceChecker(String text) {
         this.text = text;
-
     }
 
     public void check(StackClass stack) {
@@ -22,46 +21,67 @@ public class BraceChecker {
 
             if (newChars[stack.index] == ']') {
                 stack.pop();
+
+                if (newChars[stack.index] == ']' | newChars[stack.index] == '}' | newChars[stack.index] == ')') {
+                    System.out.println("Error: closed ] at " + stack.index + " but not opened");
+                }
+                if (stack.index == 0) {
+                    System.out.println("Error: closed ]  at " + stack.index + " but not opened");
+                }
                 if (newChars[stack.index] == '[') {
                     --stack.index;
                 }
                 if (newChars[stack.index] == '(') {
                     System.out.println("Error: opened " + newChars[stack.index] + " and closed " + newChars[++stack.index] + " at " + --stack.index);
-                    stack.index -= 1;
+                    --stack.index;
                 }
                 if (newChars[stack.index] == '{') {
                     System.out.println("Error: opened " + newChars[stack.index] + " and closed " + newChars[++stack.index] + " at " + --stack.index);
-                    stack.index -= 1;
+                    --stack.index;
                 }
             }
 
             if (newChars[stack.index] == ')') {
                 stack.pop();
+
+                if (newChars[stack.index] == ']' | newChars[stack.index] == '}' | newChars[stack.index] == ')') {
+                    System.out.println("Error: closed ) at " + stack.index + " but not opened");
+                }
+                if (stack.index == 0) {
+                    System.out.println("Error: closed ) at " + stack.index + " but not opened");
+                }
                 if (newChars[stack.index] == '(') {
                     --stack.index;
                 }
                 if (newChars[stack.index] == '{') {
                     System.out.println("Error: opened " + newChars[stack.index] + " and closed " + newChars[++stack.index] + " at " + --stack.index);
-                    stack.index -= 1;
+                    --stack.index;
                 }
                 if (newChars[stack.index] == '[') {
                     System.out.println("Error: opened " + newChars[stack.index] + " and closed " + newChars[++stack.index] + " at " + --stack.index);
-                    stack.index -= 1;
+                    --stack.index;
                 }
             }
 
             if (newChars[stack.index] == '}') {
                 stack.pop();
+
+                if (newChars[stack.index] == ']' | newChars[stack.index] == '}' | newChars[stack.index] == ')') {
+                    System.out.println("Error: closed } at " + stack.index + " but not opened");
+                }
+                if (stack.index == 0) {
+                    System.out.println("Error: closed } at " + stack.index + " but not opened");
+                }
                 if (newChars[stack.index] == '{') {
                     --stack.index;
                 }
                 if (newChars[stack.index] == '(') {
                     System.out.println("Error: opened " + newChars[stack.index] + " and closed " + newChars[++stack.index] + " at " + --stack.index);
-                    stack.index -= 1;
+                    --stack.index;
                 }
                 if (newChars[stack.index] == '[') {
                     System.out.println("Error: opened " + newChars[stack.index] + " and closed " + newChars[++stack.index] + " at " + --stack.index);
-                    stack.index -= 1;
+                    --stack.index;
                 }
             }
         }
