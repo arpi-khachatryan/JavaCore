@@ -12,7 +12,7 @@ public class DynamicArrayDemo {
 
         System.out.println(da.getFirstIndexByValue(4));
 
-        da.setArray(1,5);
+        da.setArray(1, 5);
 
         da.add(2, 9);
 
