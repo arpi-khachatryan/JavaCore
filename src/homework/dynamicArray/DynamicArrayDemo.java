@@ -3,9 +3,13 @@ package homework.dynamicArray;
 public class DynamicArrayDemo {
     public static void main(String[] args) {
         DynamicArray da = new DynamicArray();
-        for (int i = 1; i < 8; i++) {
+
+        for (int i = 1; i < 11; i++) {
             da.add(i);
         }
+
+        da.print();
+
         System.out.println(da.isEmpaty());
 
         System.out.println(da.getByIndex(2));
@@ -14,8 +18,8 @@ public class DynamicArrayDemo {
 
         da.setArray(1, 5);
 
-        da.add(2, 9);
+        da.add(5, 10);
 
-        da.delete(1);
+        da.delete(5);
     }
 }
