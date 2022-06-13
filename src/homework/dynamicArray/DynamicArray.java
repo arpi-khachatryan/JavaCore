@@ -60,6 +60,7 @@ public class DynamicArray {
             if (i == index) {
                 arr[i] = value;
                 ++i;
+                ++size;
                 for (int j = i; j < array.length; j++) {
                     arr[j] = array[j - 1];
                 }
@@ -67,8 +68,8 @@ public class DynamicArray {
             }
         }
         array = arr;
-        for (int x : array) {
-            System.out.print(x + " ");
+        for (int i = 0; i < size; i++) {
+            System.out.print(array[i] + " ");
         }
     }
 
