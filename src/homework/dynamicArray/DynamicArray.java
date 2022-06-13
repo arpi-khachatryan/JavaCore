@@ -31,12 +31,7 @@ public class DynamicArray {
     }
 
     public int getByIndex(int index) {
-        for (int i = 0; i < array.length; i++) {
-            if (index == i) {
-                return array[i];
-            }
-        }
-        return 0;
+        return array[index];
     }
 
     public int getFirstIndexByValue(int value) {
@@ -67,8 +62,6 @@ public class DynamicArray {
             }
         }
         array = arr;
-        for (int i = 0; i < size; i++) {
-        }
     }
 
     public void delete(int index) {
