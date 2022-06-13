@@ -40,12 +40,11 @@ public class DynamicArray {
     }
 
     public int getFirstIndexByValue(int value) {
-        for (int i = 0; i < array.length; i++) {
+        for (int i = 0; i < array.length; i++)
             if (array[i] == value) {
                 return i;
             }
-        }
-        return 0;
+        return -1;
     }
 
     public void setArray(int index, int value) {
