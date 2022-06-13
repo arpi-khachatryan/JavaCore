@@ -40,16 +40,16 @@ public class DynamicArray {
     }
 
     public int getFirstIndexByValue(int value) {
-        for (int i = 0; i < array.length; i++)
+        for (int i = 0; i < array.length; i++) {
             if (array[i] == value) {
                 return i;
             }
+        }
         return -1;
     }
 
     public void setArray(int index, int value) {
         array[index] = value;
-        System.out.println(array[index]);
     }
 
     public void add(int index, int value) {
@@ -68,19 +68,30 @@ public class DynamicArray {
         }
         array = arr;
         for (int i = 0; i < size; i++) {
-            System.out.print(array[i] + " ");
         }
     }
 
     public void delete(int index) {
-        for (int i = 0; i < size; i++) {
-            if (array[i] == array[index]) {
-                ++i;
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] != index) {
+                for (int j = 0; j < size; j++) {
+                    array[i] = array[i];
+                }
+            } else if (array[i] == index) {
+                --size;
+                for (int j = i; j < size; j++) {
+                    array[j] = array[j + 1];
+                }
+                break;
             }
-            System.out.print(array[i] + " ");
         }
     }
 }
+
+
+
+
+
 
 
 
