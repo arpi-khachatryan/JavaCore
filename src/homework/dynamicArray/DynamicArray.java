@@ -52,6 +52,7 @@ public class DynamicArray {
         System.out.println(array[index]);
     }
 
+
     public void add(int index, int value) {
         int[] arr = new int[array.length + 10];
         for (int i = 0; i < array.length; i++) {
