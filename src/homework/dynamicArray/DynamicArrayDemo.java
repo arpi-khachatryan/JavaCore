@@ -3,11 +3,9 @@ package homework.dynamicArray;
 public class DynamicArrayDemo {
     public static void main(String[] args) {
         DynamicArray da = new DynamicArray();
-
-        for (int i = 1; i < 11; i++) {
+        for (int i = 1; i < 7; i++) {
             da.add(i);
         }
-
         da.print();
 
         System.out.println(da.isEmpaty());
@@ -20,6 +18,6 @@ public class DynamicArrayDemo {
 
         da.add(5, 10);
 
-        da.delete(5);
+        da.delete(2);
     }
 }
