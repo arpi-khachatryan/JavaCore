@@ -48,26 +48,26 @@ public class DynamicArray {
     }
 
     public void add(int index, int value) {
-        int[] arr = new int[array.length + 10];
+        int[] newArray = new int[array.length + 10];
         for (int i = 0; i < array.length; i++) {
-            arr[i] = array[i];
+            newArray[i] = array[i];
             if (i == index) {
-                arr[i] = value;
+                newArray[i] = value;
                 ++i;
                 ++size;
                 for (int j = i; j < array.length; j++) {
-                    arr[j] = array[j - 1];
+                    newArray[j] = array[j - 1];
                 }
                 break;
             }
         }
-        array = arr;
+        array = newArray;
     }
 
     public void delete(int index) {
         for (int i = 0; i < array.length; i++) {
             if (array[i] != index) {
-                for (int j = 0; j < size; j++) {
+                for (int j = 0; j < 1; j++) {
                     array[i] = array[i];
                 }
             } else if (array[i] == index) {
