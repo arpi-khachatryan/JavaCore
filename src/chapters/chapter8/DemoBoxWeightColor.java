@@ -18,7 +18,7 @@ public class DemoBoxWeightColor {
         ColorBox cbox = new ColorBox(15, 25, 17, "red");
         vol = cbox.volume();
         System.out.println("cbox-ի ծավալը հավասար է " + vol);
-        System.out.println("cbox-ի գույնը հավասար է " + cbox.color);
+        System.out.println("cbox-ի գույնը: " + cbox.color);
     }
 }
 
