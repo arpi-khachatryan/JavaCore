@@ -1,9 +1,9 @@
 package chapters.chapter8.override;
 
-public class OverrideA {
+public class OverloadA {
     int i, j;
 
-    OverrideA(int a, int b) {
+    OverloadA(int a, int b) {
         i = a;
         j = b;
     }
