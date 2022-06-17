@@ -1,6 +1,6 @@
 package chapters.chapter8;
 
-public class B extends A {
+public class B/*subclass*/ extends A /*superclass*/ {
     int k;
 
     void showk() {
