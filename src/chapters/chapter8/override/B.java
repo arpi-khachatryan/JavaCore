@@ -9,7 +9,7 @@ public class B extends A {
     }
 
     void show() {
-        //or super.show();, որպեսզի override չլինի
+        //or super.show();
         System.out.println(k);
     }
 }
