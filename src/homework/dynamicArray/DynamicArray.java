@@ -66,11 +66,11 @@ public class DynamicArray {
 
     public void delete(int index) {
         for (int i = 0; i < array.length; i++) {
-            if (array[i] != index) {
+            if (i != index) {
                 for (int j = 0; j < 1; j++) {
                     array[i] = array[i];
                 }
-            } else if (array[i] == index) {
+            } else if (i == index) {
                 --size;
                 for (int j = i; j < size; j++) {
                     array[j] = array[j + 1];
