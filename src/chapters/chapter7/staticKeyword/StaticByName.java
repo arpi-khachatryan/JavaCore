@@ -1,4 +1,4 @@
-package chapters.chapter7;
+package chapters.chapter7.staticKeyword;
 
 public class StaticByName {
     static int a = 42;
