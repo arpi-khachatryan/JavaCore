@@ -1,4 +1,6 @@
-package chapters.chapter7;
+package chapters.chapter7.overload;
+
+import chapters.chapter7.overload.Overload;
 
 public class OverloadDemo {
     public static void main(String[] args) {
