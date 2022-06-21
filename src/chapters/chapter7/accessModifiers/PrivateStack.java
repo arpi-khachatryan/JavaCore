@@ -1,4 +1,4 @@
-package chapters.chapter7;
+package chapters.chapter7.accessModifiers;
 
 public class PrivateStack {
     private int[] stck = new int[10];
