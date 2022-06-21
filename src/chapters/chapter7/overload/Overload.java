@@ -1,4 +1,4 @@
-package chapters.chapter7;
+package chapters.chapter7.overload;
 
 public class Overload {
     void test() {
