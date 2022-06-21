@@ -1,4 +1,6 @@
-package chapters.chapter7;
+package chapters.chapter7.recursion;
+
+import chapters.chapter7.recursion.RecTest;
 
 public class RecTestDemo {
     public static void main(String[] args) {
