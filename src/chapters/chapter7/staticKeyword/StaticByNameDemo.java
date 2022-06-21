@@ -1,4 +1,6 @@
-package chapters.chapter7;
+package chapters.chapter7.staticKeyword;
+
+import chapters.chapter7.staticKeyword.StaticByName;
 
 public class StaticByNameDemo {
     public static void main(String[] args) {
