@@ -1,4 +1,6 @@
-package chapters.chapter7;
+package chapters.chapter7.accessModifiers;
+
+import chapters.chapter7.accessModifiers.AccessTest;
 
 public class AccessTestDemo {
     public static void main(String[] args) {
