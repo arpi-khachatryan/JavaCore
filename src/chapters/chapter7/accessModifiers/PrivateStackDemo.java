@@ -1,4 +1,6 @@
-package chapters.chapter7;
+package chapters.chapter7.accessModifiers;
+
+import chapters.chapter7.accessModifiers.PrivateStack;
 
 public class PrivateStackDemo {
     public static void main(String[] args) {
