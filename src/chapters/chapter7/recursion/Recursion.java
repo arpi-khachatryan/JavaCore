@@ -1,4 +1,6 @@
-package chapters.chapter7;
+package chapters.chapter7.recursion;
+
+import chapters.chapter7.recursion.Factorial;
 
 public class Recursion {
     public static void main(String[] args) {
