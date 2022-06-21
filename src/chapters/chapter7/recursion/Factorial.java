@@ -1,4 +1,4 @@
-package chapters.chapter7;
+package chapters.chapter7.recursion;
 
 public class Factorial {
     int fact(int n) {
