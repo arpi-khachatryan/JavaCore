@@ -1,4 +1,4 @@
-package homework;
+package homework.figures;
 
 public class Triangle2 {
     public static void main(String[] args) {
