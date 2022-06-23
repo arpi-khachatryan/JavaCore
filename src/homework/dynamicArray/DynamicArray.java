@@ -79,6 +79,18 @@ public class DynamicArray {
             }
         }
     }
+
+    //or
+    public void annul(int index) {
+        if (index >= 0 && index < size) {
+            for (int i = index; i < size; i++) {
+                array[index] = array[++index];
+            }
+            size--;
+        } else {
+            System.out.println("index out of bounds");
+        }
+    }
 }
 
 
