@@ -78,8 +78,6 @@ public class StudentDemo {
         int age = Integer.parseInt(ageStr);
 
         Student student = new Student(name, surname, age, phoneNumber, city, lesson);
-        // System.out.println("student object: ");
-        // System.out.println(student);
         studentStorage.add(student);
         System.out.println("Thank you, student is added");
     }
