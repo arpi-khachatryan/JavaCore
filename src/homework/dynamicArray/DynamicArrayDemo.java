@@ -18,6 +18,8 @@ public class DynamicArrayDemo {
 
         da.delete(2);
 
+        da.annul(3);
+
         da.print();
     }
 }
