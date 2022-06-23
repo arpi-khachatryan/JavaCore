@@ -3,7 +3,6 @@ package classwork.students;
 import java.util.Scanner;
 
 public class StudentDemo {
-
     private static Scanner scanner = new Scanner(System.in);
     private static StudentStorage studentStorage = new StudentStorage();
 
@@ -32,23 +31,13 @@ public class StudentDemo {
                     System.out.println(studentStorage.getSize());
                     break;
                 case 4:
-                    studentStorage.print();
-                    System.out.println("Please choose student's index");
-                    int index = Integer.parseInt(scanner.nextLine());
-                    studentStorage.delete(index);
+                    deleteStudentByIndex();
                     break;
                 case 5:
-                    System.out.println("Please input the lesson name");
-                    String lessonName = scanner.nextLine();
-                    studentStorage.printStudentsByLesson(lessonName);
+                    studentByLesson();
                     break;
                 case 6:
-                    studentStorage.print();
-                    System.out.println("Please select the index");
-                    int newIndex = Integer.parseInt(scanner.nextLine());
-                    System.out.println("Please write the lesson");
-                    String lesson = scanner.nextLine();
-                    studentStorage.changeLessson(lesson, newIndex);
+                    changeLesson();
                     break;
                 default:
                     System.out.println("Invalid command, please try again");
@@ -81,4 +70,27 @@ public class StudentDemo {
         studentStorage.add(student);
         System.out.println("Thank you, student is added");
     }
+
+    private static void deleteStudentByIndex() {
+        studentStorage.print();
+        System.out.println("Please choose student's index");
+        int index = Integer.parseInt(scanner.nextLine());
+        studentStorage.delete(index);
+    }
+
+    private static void studentByLesson() {
+        System.out.println("Please input the lesson name");
+        String lessonName = scanner.nextLine();
+        studentStorage.printStudentsByLesson(lessonName);
+    }
+
+    private static void changeLesson() {
+        studentStorage.print();
+        System.out.println("Please select the index");
+        int newIndex = Integer.parseInt(scanner.nextLine());
+        System.out.println("Please write the lesson");
+        String lesson = scanner.nextLine();
+        studentStorage.changeLessson(lesson, newIndex);
+    }
 }
+
