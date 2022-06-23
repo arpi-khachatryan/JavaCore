@@ -16,6 +16,7 @@ public class StudentDemo {
             System.out.println("Please input 3 to print the number of students");
             System.out.println("Please input 4 to delete the student by index");
             System.out.println("Please input 5 to print the student/students by lesson");
+            System.out.println("Please input 6 to change the students's lesson");
             int command = Integer.parseInt(scanner.nextLine());
             switch (command) {
                 case 0:
@@ -41,9 +42,16 @@ public class StudentDemo {
                     String lessonName = scanner.nextLine();
                     studentStorage.printStudentsByLesson(lessonName);
                     break;
+                case 6:
+                    studentStorage.print();
+                    System.out.println("Please select the index");
+                    int newIndex = Integer.parseInt(scanner.nextLine());
+                    System.out.println("Please write the lesson");
+                    String lesson = scanner.nextLine();
+                    studentStorage.changeLessson(lesson, newIndex);
+                    break;
                 default:
                     System.out.println("Invalid command, please try again");
-                    break;
             }
         }
     }
