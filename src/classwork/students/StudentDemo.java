@@ -34,7 +34,7 @@ public class StudentDemo {
                     deleteStudentByIndex();
                     break;
                 case 5:
-                    studentByLesson();
+                    printStudentByLesson();
                     break;
                 case 6:
                     changeLesson();
@@ -78,7 +78,7 @@ public class StudentDemo {
         studentStorage.delete(index);
     }
 
-    private static void studentByLesson() {
+    private static void printStudentByLesson() {
         System.out.println("Please input the lesson name");
         String lessonName = scanner.nextLine();
         studentStorage.printStudentsByLesson(lessonName);
@@ -88,7 +88,7 @@ public class StudentDemo {
         studentStorage.print();
         System.out.println("Please select the index");
         int newIndex = Integer.parseInt(scanner.nextLine());
-        System.out.println("Please write the lesson");
+        System.out.println("Please input the lesson name");
         String lesson = scanner.nextLine();
         studentStorage.changeLessson(lesson, newIndex);
     }
