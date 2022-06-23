@@ -52,8 +52,6 @@ public class StudentStorage {
     }
 
     public void changeLessson(String lessson, int index) {
-        for (int i = index; i < size; i++) {
-            array[index].setLesson(lessson);
-        }
+        array[index].setLesson(lessson);
     }
 }
