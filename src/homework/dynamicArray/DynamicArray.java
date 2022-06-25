@@ -35,7 +35,7 @@ public class DynamicArray {
     }
 
     public int getFirstIndexByValue(int value) {
-        for (int i = 0; i < array.length; i++) {
+        for (int i = 0; i < size; i++) {
             if (array[i] == value) {
                 return i;
             }
@@ -44,7 +44,11 @@ public class DynamicArray {
     }
 
     public void setArray(int index, int value) {
-        array[index] = value;
+        if (index > -1 && index < size) {
+            array[index] = value;
+        } else {
+            System.out.println("Invalid index");
+        }
     }
 
     public void add(int index, int value) {
@@ -62,6 +66,19 @@ public class DynamicArray {
             }
         }
         array = newArray;
+    }
+
+    //or
+
+    public void append(int index, int value) {
+        if (size == array.length) {
+            increaseArray();
+        }
+        for (int i = size; i >= index; i--) {
+            array[i] = array[i - 1];
+        }
+        array[index] = value;
+        size++;
     }
 
     public void delete(int index) {
@@ -84,11 +101,11 @@ public class DynamicArray {
     public void annul(int index) {
         if (index >= 0 && index < size) {
             for (int i = index; i < size; i++) {
-                array[index] = array[++index];
+                array[i] = array[++i];
             }
             size--;
         } else {
-            System.out.println("index out of bounds");
+            System.out.println("Index out of bounds");
         }
     }
 }
