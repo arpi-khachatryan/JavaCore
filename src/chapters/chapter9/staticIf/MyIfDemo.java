@@ -1,4 +1,6 @@
-package chapters.chapter9;
+package chapters.chapter9.staticIf;
+
+import chapters.chapter9.staticIf.MyIf;
 
 public class MyIfDemo {
     public static void main(String[] args) {
