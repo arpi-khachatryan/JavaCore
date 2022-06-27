@@ -1,4 +1,4 @@
-package chapters.chapter9;
+package chapters.chapter9.staticIf;
 
 public interface MyIf {
     int getNumber();
