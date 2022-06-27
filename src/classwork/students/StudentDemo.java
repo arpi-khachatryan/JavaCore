@@ -88,9 +88,17 @@ public class StudentDemo {
         studentStorage.print();
         System.out.println("Please select the index");
         int newIndex = Integer.parseInt(scanner.nextLine());
-        System.out.println("Please input the lesson name");
-        String lesson = scanner.nextLine();
-        studentStorage.changeLessson(lesson, newIndex);
+        Student student = studentStorage.getStudentByIndex(newIndex);
+        if (student != null) {
+            System.out.println("Please input the lesson name");
+            String lesson = scanner.nextLine();
+            if (lesson != null && !lesson.trim().equals("")) {
+                student.setLesson(lesson.trim());
+            }
+        } else {
+            System.out.println("Invalid index, please trya again");
+            //changeLesson();
+        }
     }
 }
 
