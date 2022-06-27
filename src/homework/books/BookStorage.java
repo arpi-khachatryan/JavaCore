@@ -54,19 +54,9 @@ public class BookStorage {
     public void bookByPriceRange(int price1, int price2) {
         int count = 0;
         for (int i = 0; i < size; i++) {
-            if (booksArray[i].getPrice() == price1 || booksArray[i].getPrice() == price2) {
+            if (booksArray[i].getPrice() == price1 || booksArray[i].getPrice() == price2 || booksArray[i].getPrice() < price1 && booksArray[i].getPrice() > price2 || booksArray[i].getPrice() > price1 && booksArray[i].getPrice() < price2) {
                 System.out.println(booksArray[i]);
                 ++count;
-            } else if (price1 > price2) {
-                if (booksArray[i].getPrice() < price1 && booksArray[i].getPrice() > price2) {
-                    System.out.println(booksArray[i]);
-                    ++count;
-                }
-            } else if (price1 < price2) {
-                if (booksArray[i].getPrice() > price1 && booksArray[i].getPrice() < price2) {
-                    System.out.println(booksArray[i]);
-                    ++count;
-                }
             }
         }
         if (count == 0) {
