@@ -7,8 +7,6 @@ public class BooksDemo implements Commands {
     private static BookStorage bookStorage = new BookStorage();
 
     public static void main(String[] args) {
-        bookStorage.add(new Books("arpi", "aa", 12, "aa", 1000));
-        bookStorage.add(new Books("arpi", "aa", 12, "aa", 2000));
         boolean run = true;
         while (run) {
             System.out.println("Please, input " + EXIT + " for exit");
