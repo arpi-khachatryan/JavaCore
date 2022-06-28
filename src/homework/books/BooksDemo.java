@@ -7,6 +7,8 @@ public class BooksDemo implements Commands {
     private static BookStorage bookStorage = new BookStorage();
 
     public static void main(String[] args) {
+        bookStorage.add(new Books("arpi", "aa", 12, "aa", 1000));
+        bookStorage.add(new Books("arpi", "aa", 12, "aa", 2000));
         boolean run = true;
         while (run) {
             System.out.println("Please, input " + EXIT + " for exit");
@@ -58,15 +60,15 @@ public class BooksDemo implements Commands {
     }
 
     private static void bookByPriceRange() {
-        System.out.println("Please input the amount you prefer");
-        int price1 = Integer.parseInt(scanner.nextLine());
-        System.out.println("Please input the amount you prefer");
-        int price2 = Integer.parseInt(scanner.nextLine());
-        bookStorage.bookByPriceRange(price1, price2);
+        System.out.println("Please input the minimum amount you prefer");
+        double min = Double.parseDouble(scanner.nextLine());
+        System.out.println("Please input the maximum amount you prefer");
+        double max = Double.parseDouble(scanner.nextLine());
+        bookStorage.bookByPriceRange(min, max);
     }
 
     private static void addBooks() {
-        System.out.println("Please input the title  of the books");
+        System.out.println("Please input the title of the books");
         String title = scanner.nextLine();
 
         System.out.println("Please input the name of the author of the book");
