@@ -1,4 +1,4 @@
-package chapters.chapter10;
+package chapters.chapter10.tryCatch;
 
 import java.util.Random;
 
