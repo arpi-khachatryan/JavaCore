@@ -1,4 +1,6 @@
-package classwork.students;
+package classwork.students.storage;
+
+import classwork.students.model.Student;
 
 public class StudentStorage {
 
