@@ -15,12 +15,6 @@ public class BooksDemo implements Commands {
     private static AuthorStorage authorStorage = new AuthorStorage();
 
     public static void main(String[] args) {
-        Author Erich = new Author("Erich", "Remarque", "ErichRemarque@gmail.com", "male");
-        authorStorage.add(Erich);
-        Author George = new Author("George", "Orwell", "GeorgeOrwell@gmail.com", "male");
-        authorStorage.add(George);
-        bookStorage.add(new Book("ArchOfTriumph", Erich, 2, "novel", 3000));
-        bookStorage.add(new Book("AnimalFarm", George, 4, "novel", 4000));
         boolean run = true;
         while (run) {
             Commands.printCommands();
