@@ -1,20 +1,29 @@
 package homework.books;
 
+import homework.books.command.Commands;
+import homework.books.model.Author;
+import homework.books.model.Book;
+import homework.books.storage.AuthorStorage;
+import homework.books.storage.BookStorage;
+
 import java.util.Scanner;
 
 public class BooksDemo implements Commands {
     private static Scanner scanner = new Scanner(System.in);
     private static BookStorage bookStorage = new BookStorage();
 
+    private static AuthorStorage authorStorage = new AuthorStorage();
+
     public static void main(String[] args) {
+        Author Erich = new Author("Erich", "Remarque", "ErichRemarque@gmail.com", "male");
+        authorStorage.add(Erich);
+        Author George = new Author("George", "Orwell", "GeorgeOrwell@gmail.com", "male");
+        authorStorage.add(George);
+        bookStorage.add(new Book("ArchOfTriumph", Erich, 2, "novel", 3000));
+        bookStorage.add(new Book("AnimalFarm", George, 4, "novel", 4000));
         boolean run = true;
         while (run) {
-            System.out.println("Please, input " + EXIT + " for exit");
-            System.out.println("Please, input " + ADD_BOOK + " to add a book");
-            System.out.println("Please, input " + PRINT_ALL_BOOKS + " to print all the books");
-            System.out.println("Please, input " + PRINT_BOOKS_BY_AUTHOR_NAME + " to show all the books by your favorite author");
-            System.out.println("Please, input " + PRINT_BOOKS_BY_GENRE + " to show all the books of your favorite genre");
-            System.out.println("Please, input " + PRINT_BOOKS_BY_PRICE_RANGE + " to show all the books at a specified price");
+            Commands.printCommands();
             int command = Integer.parseInt(scanner.nextLine());
             switch (command) {
                 case EXIT:
@@ -35,8 +44,53 @@ public class BooksDemo implements Commands {
                 case PRINT_BOOKS_BY_PRICE_RANGE:
                     bookByPriceRange();
                     break;
+                case ADD_AUTHOR:
+                    addAuthor();
+                    break;
+                case PRINT_AUTHOR_BY_GENDER:
+                    printAuthorsByGender();
+                    break;
+                case PRINT_AUTHOR_BY_EMAIL:
+                    printAuthorsByEmail();
+                    break;
+                case PRINT_ALL_AUTHORS:
+                    authorStorage.print();
+                    break;
                 default:
                     System.out.println("Please, try again");
+            }
+        }
+    }
+
+    private static void addBooks() {
+        if (authorStorage.getSize() == 0) {
+            System.out.println("Please add the author");
+            addAuthor();
+            addBooks();
+        } else {
+            authorStorage.print();
+            System.out.println("Please choose the index");
+            int index = Integer.parseInt(scanner.nextLine());
+            Author author = authorStorage.getAuthorByIndex(index);
+            if (author == null) {
+                System.out.println("Incorrect index, try again");
+                addBooks();
+            } else {
+                System.out.println("Please input the title of the books");
+                String title = scanner.nextLine();
+
+                System.out.println("Please input the number of books");
+                double count = Double.parseDouble(scanner.nextLine());
+
+                System.out.println("Please input the genre of the book");
+                String genre = scanner.nextLine();
+
+                System.out.println("Please input the price of the book");
+                double price = Double.parseDouble(scanner.nextLine());
+
+                Book book = new Book(title, author, count, genre, price);
+                bookStorage.add(book);
+                System.out.println("Thank you, the book was added");
             }
         }
     }
@@ -45,7 +99,7 @@ public class BooksDemo implements Commands {
         System.out.println("Please input your favorite author");
         String author = scanner.nextLine();
         if (author != null && !author.trim().equals("")) {
-            bookStorage.bookByAuthor(author);
+            bookStorage.bookByAuther(author);
         }
     }
 
@@ -65,24 +119,38 @@ public class BooksDemo implements Commands {
         bookStorage.bookByPriceRange(min, max);
     }
 
-    private static void addBooks() {
-        System.out.println("Please input the title of the books");
-        String title = scanner.nextLine();
+    private static void addAuthor() {
+        System.out.println("Please input author's name");
+        String name = scanner.nextLine();
 
-        System.out.println("Please input the name of the author of the book");
-        String authorName = scanner.nextLine();
+        System.out.println("Please input author's surname");
+        String surname = scanner.nextLine();
 
-        System.out.println("Please input the number of books");
-        double count = Double.parseDouble(scanner.nextLine());
+        System.out.println("Please input the authors's email address");
+        String email = scanner.nextLine();
 
-        System.out.println("Please input the genre of the book");
-        String genre = scanner.nextLine();
+        System.out.println("Please input the author's gender");
+        String gender = scanner.nextLine();
 
-        System.out.println("Please input the price of the book");
-        int price = Integer.parseInt(scanner.nextLine());
+        Author author = new Author(name, surname, email, gender);
+        authorStorage.add(author);
+        System.out.println("Thank you, the author was added");
+    }
 
-        Books book = new Books(title, authorName, count, genre, price);
-        bookStorage.add(book);
-        System.out.println("Thank you, the book was added");
+    private static void printAuthorsByGender() {
+        System.out.println("Please input the gender");
+        String gender = scanner.nextLine();
+        if (gender != null && !gender.trim().equals("")) {
+            authorStorage.authorByGender(gender);
+        }
+    }
+
+    private static void printAuthorsByEmail() {
+        System.out.println("Please input the email address");
+        String email = scanner.nextLine();
+        if (email != null && !email.trim().equals("")) {
+            authorStorage.authorByEmail(email);
+        }
     }
 }
+
