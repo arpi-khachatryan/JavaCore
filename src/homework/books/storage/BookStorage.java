@@ -1,10 +1,12 @@
-package homework.books;
+package homework.books.storage;
+
+import homework.books.model.Book;
 
 public class BookStorage {
-    private Books[] booksArray = new Books[10];
+    private Book[] booksArray = new Book[10];
     private int size = 0;
 
-    public void add(Books book) {
+    public void add(Book book) {
         if (size == booksArray.length) {
             increase();
         }
@@ -12,7 +14,7 @@ public class BookStorage {
     }
 
     private void increase() {
-        Books[] booksNewArray = new Books[booksArray.length * 2];
+        Book[] booksNewArray = new Book[booksArray.length * 2];
         for (int i = 0; i < size; i++) {
             booksNewArray[i] = booksArray[i];
         }
@@ -25,41 +27,47 @@ public class BookStorage {
         }
     }
 
-    public void bookByAuthor(String author) {
-        int count = 0;
+    public Book getBookByIndex(int index) {
+        if (index >= 0 && index < size) {
+            return booksArray[index];
+        }
+        return null;
+    }
+    public void bookByAuther(String auther) {
+        int number = 0;
         for (int i = 0; i < size; i++) {
-            if (booksArray[i].getAuthorName().equals(author)) {
+            if (booksArray[i].getAuthor().getName().equals(auther)) {
                 System.out.println(booksArray[i]);
-                ++count;
+                ++number;
             }
         }
-        if (count == 0) {
-            System.out.println("Sorry, the book was not found");
+        if (number == 0) {
+            System.out.println("Incorrect name, please try again");
         }
     }
 
     public void bookByGenre(String genre) {
-        int count = 0;
+        int number = 0;
         for (int i = 0; i < size; i++) {
             if (booksArray[i].getGenre().equals(genre)) {
                 System.out.println(booksArray[i]);
-                ++count;
+                ++number;
             }
         }
-        if (count == 0) {
+        if (number == 0) {
             System.out.println("Sorry, the book was not found");
         }
     }
 
     public void bookByPriceRange(double min, double max) {
-        int count = 0;
+        int number = 0;
         for (int i = 0; i < size; i++) {
             if (booksArray[i].getPrice() > min - 1 && booksArray[i].getPrice() < max + 1) {
                 System.out.println(booksArray[i]);
-                ++count;
+                ++number;
             }
         }
-        if (count == 0) {
+        if (number == 0) {
             System.out.println("Sorry, there is no book at that price");
         }
     }
