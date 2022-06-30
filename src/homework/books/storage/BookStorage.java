@@ -63,7 +63,7 @@ public class BookStorage {
     public void bookByPriceRange(double min, double max) {
         int number = 0;
         for (int i = 0; i < size; i++) {
-            if (booksArray[i].getPrice() > min - 1 && booksArray[i].getPrice() < max + 1) {
+            if (booksArray[i].getPrice() >= min && booksArray[i].getPrice() <= max) {
                 System.out.println(booksArray[i]);
                 ++number;
             }
