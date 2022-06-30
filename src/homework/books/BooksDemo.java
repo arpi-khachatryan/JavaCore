@@ -122,12 +122,19 @@ public class BooksDemo implements Commands {
         System.out.println("Please input the authors's email address");
         String email = scanner.nextLine();
 
-        System.out.println("Please input the author's gender");
-        String gender = scanner.nextLine();
-
-        Author author = new Author(name, surname, email, gender);
-        authorStorage.add(author);
-        System.out.println("Thank you, the author was added");
+        int number = 0;
+        while (number == 0) {
+            System.out.println("Please input the author's gender");
+            String gender = scanner.nextLine();
+            if (gender.equals("MALE") || gender.equals("FEMALE")) {
+                Author author = new Author(name, surname, email, gender);
+                authorStorage.add(author);
+                System.out.println("Thank you, the author was added");
+                ++number;
+            } else {
+                System.out.println("Incorrect gender, please try again");
+            }
+        }
     }
 
     private static void printAuthorsByGender() {
@@ -137,6 +144,7 @@ public class BooksDemo implements Commands {
             authorStorage.authorByGender(gender);
         }
     }
+
 
     private static void printAuthorsByEmail() {
         System.out.println("Please input the email address");
