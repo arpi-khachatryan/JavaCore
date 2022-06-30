@@ -62,18 +62,14 @@ public class BookStorage {
 
     public void bookByPriceRange(double min, double max) {
         int number = 0;
-        if (min > 0 && min < max) {
-            for (int i = 0; i < size; i++) {
-                if (booksArray[i].getPrice() >= min && booksArray[i].getPrice() <= max) {
-                    System.out.println(booksArray[i]);
-                    ++number;
-                }
+        for (int i = 0; i < size; i++) {
+            if (booksArray[i].getPrice() >= min && booksArray[i].getPrice() <= max) {
+                System.out.println(booksArray[i]);
+                ++number;
             }
-            if (number == 0) {
-                System.out.println("Sorry, there is no book at that price");
-            }
-        } else {
-            System.out.println("Please try again");
+        }
+        if (number == 0) {
+            System.out.println("Sorry, there is no book at that price");
         }
     }
 }
