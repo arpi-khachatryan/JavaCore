@@ -10,8 +10,7 @@ public interface Commands {
     int ADD_AUTHOR = 6;
     int PRINT_AUTHOR_BY_GENDER = 7;
     int PRINT_AUTHOR_BY_EMAIL = 8;
-    int CHANGE_AUTHOR_BOOK = 9;
-    int PRINT_ALL_AUTHORS = 10;
+    int PRINT_ALL_AUTHORS = 9;
 
     static void printCommands() {
         System.out.println("Please, input " + EXIT + " for exit");
@@ -23,7 +22,6 @@ public interface Commands {
         System.out.println("Please, input " + ADD_AUTHOR + " to add the author");
         System.out.println("Please, input " + PRINT_AUTHOR_BY_GENDER + " to show the author by gender");
         System.out.println("Please, input " + PRINT_AUTHOR_BY_EMAIL + " to show the author by email");
-        System.out.println("Please, input " + CHANGE_AUTHOR_BOOK + " to change the author's book");
         System.out.println("Please, input " + PRINT_ALL_AUTHORS + " to show all the authors");
     }
 }
