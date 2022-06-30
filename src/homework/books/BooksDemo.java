@@ -11,7 +11,6 @@ import java.util.Scanner;
 public class BooksDemo implements Commands {
     private static Scanner scanner = new Scanner(System.in);
     private static BookStorage bookStorage = new BookStorage();
-
     private static AuthorStorage authorStorage = new AuthorStorage();
 
     public static void main(String[] args) {
