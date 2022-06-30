@@ -33,6 +33,7 @@ public class BookStorage {
         }
         return null;
     }
+
     public void bookByAuther(String auther) {
         int number = 0;
         for (int i = 0; i < size; i++) {
