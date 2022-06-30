@@ -5,7 +5,6 @@ import homework.books.model.Author;
 import homework.books.model.Book;
 import homework.books.storage.AuthorStorage;
 import homework.books.storage.BookStorage;
-
 import java.util.Scanner;
 
 public class BooksDemo implements Commands {
@@ -144,7 +143,6 @@ public class BooksDemo implements Commands {
             authorStorage.authorByGender(gender);
         }
     }
-
 
     private static void printAuthorsByEmail() {
         System.out.println("Please input the email address");
