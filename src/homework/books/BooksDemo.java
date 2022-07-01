@@ -5,6 +5,7 @@ import homework.books.model.Author;
 import homework.books.model.Book;
 import homework.books.storage.AuthorStorage;
 import homework.books.storage.BookStorage;
+
 import java.util.Scanner;
 
 public class BooksDemo implements Commands {
@@ -58,32 +59,51 @@ public class BooksDemo implements Commands {
         if (authorStorage.getSize() == 0) {
             System.out.println("Please add the author");
             addAuthor();
-            addBooks();
+            addBook();
         } else {
             authorStorage.print();
-            System.out.println("Please choose the index");
-            int index = Integer.parseInt(scanner.nextLine());
-            Author author = authorStorage.getAuthorByIndex(index);
-            if (author == null) {
-                System.out.println("Incorrect index, try again");
-                addBooks();
-            } else {
-                System.out.println("Please input the title of the books");
-                String title = scanner.nextLine();
-
-                System.out.println("Please input the number of books");
-                double count = Double.parseDouble(scanner.nextLine());
-
-                System.out.println("Please input the genre of the book");
-                String genre = scanner.nextLine();
-
-                System.out.println("Please input the price of the book");
-                double price = Double.parseDouble(scanner.nextLine());
-
-                Book book = new Book(title, author, count, genre, price);
-                bookStorage.add(book);
-                System.out.println("Thank you, the book was added");
+            int number = 0;
+            while (number == 0) {
+                System.out.println("Do you want to add an author, YES or NO?");
+                String answer = scanner.nextLine();
+                if (answer.equals("YES")) {
+                    ++number;
+                    addAuthor();
+                    addBook();
+                } else if (answer.equals("NO")) {
+                    ++number;
+                    addBook();
+                } else {
+                    System.out.println("Unclear answer, try again");
+                }
             }
+        }
+    }
+
+    private static void addBook() {
+        authorStorage.print();
+        System.out.println("Please choose the author's index");
+        int index = Integer.parseInt(scanner.nextLine());
+        Author author = authorStorage.getAuthorByIndex(index);
+        if (author == null) {
+            System.out.println("Incorrect index, try again");
+            addBook();
+        } else {
+            System.out.println("Please input the title of the books");
+            String title = scanner.nextLine();
+
+            System.out.println("Please input the number of books");
+            double count = Double.parseDouble(scanner.nextLine());
+
+            System.out.println("Please input the genre of the book");
+            String genre = scanner.nextLine();
+
+            System.out.println("Please input the price of the book");
+            double price = Double.parseDouble(scanner.nextLine());
+
+            Book book = new Book(title, author, count, genre, price);
+            bookStorage.add(book);
+            System.out.println("Thank you, the book was added");
         }
     }
 
