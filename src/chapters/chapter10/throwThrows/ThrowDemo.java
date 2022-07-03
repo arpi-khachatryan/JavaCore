@@ -1,6 +1,6 @@
 package chapters.chapter10.throwThrows;
 
-public class Throw {
+public class ThrowDemo {
     static void proc() {
         try {
             throw new NullPointerException("Բացառություն");
