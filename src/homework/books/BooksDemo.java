@@ -166,6 +166,8 @@ public class BooksDemo implements Commands {
         String genre = scanner.nextLine();
         if (genre != null && !genre.trim().equals("")) {
             bookStorage.bookByGenre(genre);
+        } else {
+            System.out.println("Incorrect genre");
         }
     }
 
@@ -217,6 +219,8 @@ public class BooksDemo implements Commands {
         String gender = scanner.nextLine();
         if (gender != null && !gender.trim().equals("")) {
             authorStorage.authorByGender(gender);
+        } else {
+            System.out.println("Incorrect gender");
         }
     }
 
