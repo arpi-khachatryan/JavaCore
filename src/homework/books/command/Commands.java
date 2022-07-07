@@ -11,6 +11,8 @@ public interface Commands {
     int PRINT_AUTHOR_BY_GENDER = 7;
     int PRINT_AUTHOR_BY_EMAIL = 8;
     int PRINT_ALL_AUTHORS = 9;
+    String LOGIN = "admin";
+    String PASSWORD = "123456";
 
     static void printCommands() {
         System.out.println("Please, input " + EXIT + " for exit");
