@@ -47,8 +47,7 @@ public class AuthorStorage {
     public void authorByGender(String genderStr) {
         int number = 0;
         for (int i = 0; i < size; i++) {
-            Gender gender = Gender.valueOf(genderStr.toUpperCase());
-            if (array[i].getGender().equals(gender)) {
+            if (array[i].getGender().equals(Gender.valueOf(genderStr.toUpperCase()))) {
                 System.out.println(array[i]);
                 ++number;
             }
