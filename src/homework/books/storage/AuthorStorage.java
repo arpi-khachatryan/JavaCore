@@ -2,6 +2,7 @@ package homework.books.storage;
 
 import homework.books.exception.AuthorNotFoundException;
 import homework.books.model.Author;
+import homework.books.model.Gender;
 
 public class AuthorStorage {
 
@@ -34,16 +35,19 @@ public class AuthorStorage {
     }
 
     public Author getAuthorByIndex(int index) throws AuthorNotFoundException {
-        if (index > -1 && index < size) {
-            return array[index];
-        } else {
+        if (index < -1 || index > size) {
             throw new AuthorNotFoundException("Author with " + index + " index does not exist");
+        } else if (array[index] == null) {
+            throw new AuthorNotFoundException("Author with " + index + " index does not exist");
+        } else {
+            return array[index];
         }
     }
 
-    public void authorByGender(String gender) {
+    public void authorByGender(String genderStr) {
         int number = 0;
         for (int i = 0; i < size; i++) {
+            Gender gender = Gender.valueOf(genderStr.toUpperCase());
             if (array[i].getGender().equals(gender)) {
                 System.out.println(array[i]);
                 ++number;
