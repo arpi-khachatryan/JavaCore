@@ -153,7 +153,10 @@ public class BooksDemo implements Commands {
         String author = scanner.nextLine();
         if (author != null && !author.trim().equals("")) {
             bookStorage.bookByAuther(author);
+        } else {
+            System.out.println("Unclear answer");
         }
+
     }
 
     private static void bookByGenre() {
@@ -162,7 +165,7 @@ public class BooksDemo implements Commands {
         if (genre != null && !genre.trim().equals("")) {
             bookStorage.bookByGenre(genre);
         } else {
-            System.out.println("Incorrect genre");
+            System.out.println("Unclear answer");
         }
     }
 
@@ -215,7 +218,7 @@ public class BooksDemo implements Commands {
         if (gender != null && !gender.trim().equals("")) {
             authorStorage.authorByGender(gender);
         } else {
-            System.out.println("Incorrect gender");
+            System.out.println("Unclear answer");
         }
     }
 
@@ -224,6 +227,8 @@ public class BooksDemo implements Commands {
         String email = scanner.nextLine();
         if (email != null && !email.trim().equals("")) {
             authorStorage.authorByEmail(email);
+        } else {
+            System.out.println("Unclear answer");
         }
     }
 }
