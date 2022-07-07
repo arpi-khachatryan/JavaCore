@@ -45,14 +45,18 @@ public class AuthorStorage {
     }
 
     public void authorByGender(String genderStr) {
-        int number = 0;
-        for (int i = 0; i < size; i++) {
-            if (array[i].getGender().equals(Gender.valueOf(genderStr.toUpperCase()))) {
-                System.out.println(array[i]);
-                ++number;
+        try {
+            int number = 0;
+            for (int i = 0; i < size; i++) {
+                if (array[i].getGender().equals(Gender.valueOf(genderStr.toUpperCase()))) {
+                    System.out.println(array[i]);
+                    ++number;
+                }
+                if (number == 0) {
+                    System.out.println("There is no author with that gender");
+                }
             }
-        }
-        if (number == 0) {
+        } catch (Exception e) {
             System.out.println("Incorrect gender, please try again");
         }
     }
