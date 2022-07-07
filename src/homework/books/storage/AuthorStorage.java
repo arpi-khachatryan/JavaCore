@@ -52,9 +52,9 @@ public class AuthorStorage {
                     System.out.println(array[i]);
                     ++number;
                 }
-                if (number == 0) {
-                    System.out.println("There is no author with that gender");
-                }
+            }
+            if (number == 0) {
+                System.out.println("There is no author with that gender");
             }
         } catch (Exception e) {
             System.out.println("Incorrect gender, please try again");
