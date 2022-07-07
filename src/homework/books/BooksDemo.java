@@ -82,20 +82,15 @@ public class BooksDemo implements Commands {
             addBook();
         } else {
             authorStorage.print();
-            int number = 0;
-            while (number == 0) {
-                System.out.println("Do you want to add an author, YES or NO?");
-                String answer = scanner.nextLine();
-                if (answer.equals("YES")) {
-                    ++number;
-                    addAuthor();
-                    addBook();
-                } else if (answer.equals("NO")) {
-                    ++number;
-                    addBook();
-                } else {
-                    System.out.println("Unclear answer, try again");
-                }
+            System.out.println("Do you want to add an author, YES or NO?");
+            String answer = scanner.nextLine();
+            if (answer.toUpperCase().equals("YES")) {
+                addAuthor();
+                addBook();
+            } else if (answer.toUpperCase().equals("NO")) {
+                addBook();
+            } else {
+                System.out.println("Unclear answer");
             }
         }
     }
