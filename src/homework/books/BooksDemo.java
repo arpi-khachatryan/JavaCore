@@ -156,7 +156,6 @@ public class BooksDemo implements Commands {
         } else {
             System.out.println("Unclear answer");
         }
-
     }
 
     private static void bookByGenre() {
@@ -194,7 +193,6 @@ public class BooksDemo implements Commands {
         Author author = new Author(name, surname, email, gender);
         authorStorage.add(author);
         System.out.println("Thank you, the author was added");
-
     }
 
     private static Gender trueGender() {
