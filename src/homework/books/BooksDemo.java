@@ -67,10 +67,8 @@ public class BooksDemo implements Commands {
         System.out.println("Please, input login and password");
         String login = scanner.nextLine();
         String password = scanner.nextLine();
-        if (LOGIN.equals(login) && PASSWORD.equals(password)) {
-            return;
-        } else {
-            System.out.println("Incorrect login or password");
+        if (!login.equals(LOGIN) || !password.equals(PASSWORD)) {
+            System.err.println("Incorrect login or password");
             loginPassword();
         }
     }
@@ -199,8 +197,8 @@ public class BooksDemo implements Commands {
     private static Gender trueGender() {
         try {
             System.out.println("Please input the author's gender");
-            String g = scanner.nextLine();
-            Gender gender = Gender.valueOf(g.toUpperCase());
+            String strGender = scanner.nextLine();
+            Gender gender = Gender.valueOf(strGender.toUpperCase());
             if (gender.equals(Gender.FEMALE) || gender.equals(Gender.MALE)) {
                 return gender;
             }
