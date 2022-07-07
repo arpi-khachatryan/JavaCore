@@ -4,6 +4,7 @@ import homework.books.command.Commands;
 import homework.books.exception.AuthorNotFoundException;
 import homework.books.model.Author;
 import homework.books.model.Book;
+import homework.books.model.Gender;
 import homework.books.storage.AuthorStorage;
 import homework.books.storage.BookStorage;
 
@@ -111,12 +112,10 @@ public class BooksDemo implements Commands {
                 String title = scanner.nextLine();
 
                 double count = trueCount();
-
                 System.out.println("Please input the genre of the book");
                 String genre = scanner.nextLine();
 
                 double price = truePrice();
-
                 Book book = new Book(title, author, count, genre, price);
                 bookStorage.add(book);
                 System.out.println("Thank you, the book was added");
