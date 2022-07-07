@@ -91,6 +91,7 @@ public class BooksDemo implements Commands {
                 addBook();
             } else {
                 System.out.println("Unclear answer");
+                addBooks();
             }
         }
     }
