@@ -195,18 +195,17 @@ public class BooksDemo implements Commands {
     }
 
     private static Gender trueGender() {
+        Gender gender;
         try {
             System.out.println("Please input the author's gender");
             String strGender = scanner.nextLine();
-            Gender gender = Gender.valueOf(strGender.toUpperCase());
-            if (gender.equals(Gender.FEMALE) || gender.equals(Gender.MALE)) {
-                return gender;
-            }
+            gender = Gender.valueOf(strGender.toUpperCase());
+            if (gender.equals(Gender.FEMALE) || gender.equals(Gender.MALE)) ;
         } catch (IllegalArgumentException e) {
-            System.out.println("Incorrect gender");
-            trueGender();
+            System.err.println("Incorrect gender");
+            gender = trueGender();
         }
-        return null;
+        return gender;
     }
 
     private static void printAuthorsByGender() {
