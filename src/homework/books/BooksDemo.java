@@ -2,11 +2,10 @@ package homework.books;
 
 import homework.books.command.Commands;
 import homework.books.exception.AuthorNotFoundException;
-import homework.books.model.Author;
-import homework.books.model.Book;
-import homework.books.model.Gender;
+import homework.books.model.*;
 import homework.books.storage.AuthorStorage;
 import homework.books.storage.BookStorage;
+import homework.books.storage.UserStorage;
 
 import java.util.Scanner;
 
@@ -14,12 +13,17 @@ public class BooksDemo implements Commands {
     private static Scanner scanner = new Scanner(System.in);
     private static BookStorage bookStorage = new BookStorage();
     private static AuthorStorage authorStorage = new AuthorStorage();
+    private static UserStorage userStorage = new UserStorage();
+    private static User currentUser = null;
 
     public static void main(String[] args) {
-        loginPassword();
+        Author Nicholas = new Author("Nicholas", " Sparks", "nicholassparks.com", Gender.MALE);
+        authorStorage.add(Nicholas);
+        bookStorage.add(new Book("MessageInABottle", Nicholas, 5, "novel", 3000));
+        userStorage.add(new User("admin", "admin", "admin@gmail.com", "admin", Role.ADMIN));
         boolean run = true;
         while (run) {
-            Commands.printCommands();
+            Commands.printInitialCommands();
             int command;
             try {
                 command = Integer.parseInt(scanner.nextLine());
@@ -28,6 +32,77 @@ public class BooksDemo implements Commands {
             }
             switch (command) {
                 case EXIT:
+                    run = false;
+                    break;
+                case LOGIN:
+                    login();
+                    break;
+                case REGISTER:
+                    register();
+                    break;
+                default:
+                    System.out.println("Please, try again");
+            }
+        }
+    }
+
+    private static void login() {
+        System.out.println("Please input email,password");
+        String data = scanner.nextLine();
+        String[] userData = data.split(",");
+        User user = userStorage.getUserByEmailAndPassword(userData[0]);
+        if (user == null) {
+            System.out.println("User does not exist");
+        } else {
+            if (!user.getPassword().equals(userData[1])) {
+                System.out.println("Password is incorrect");
+            } else {
+                currentUser = user;
+                if (user.getRegisteredRole() == Role.ADMIN) {
+                    adminLogin();
+                } else if (user.getRegisteredRole() == Role.USER) {
+                    userLogin();
+                }
+            }
+        }
+    }
+
+    private static void register() {
+        System.out.println("Please input name,surname,email,password");
+        String data = scanner.nextLine();
+        String[] userData = data.split(",");
+        if (userData.length < 4) {
+            System.out.println("Please input correct user data");
+        } else {
+            if (userStorage.getUserByEmailAndPassword(userData[2]) == null) {
+                User user = new User();
+                user.setName(userData[0]);
+                user.setSurName(userData[1]);
+                user.setEmail(userData[2]);
+                user.setPassword(userData[3]);
+                user.setRegisteredRole(Role.USER);
+                userStorage.add(user);
+                System.out.println("You are registered");
+            } else {
+                System.out.println("User with " + userData[2] + " already exists");
+            }
+        }
+    }
+
+    private static void adminLogin() {
+        System.out.println("Welcome " + currentUser.getName());
+        boolean run = true;
+        while (run) {
+            Commands.printAdminCommands();
+            int command;
+            try {
+                command = Integer.parseInt(scanner.nextLine());
+            } catch (NumberFormatException e) {
+                command = -1;
+            }
+            switch (command) {
+                case LOGOUT:
+                    currentUser = null;
                     run = false;
                     break;
                 case ADD_BOOK:
@@ -63,13 +138,46 @@ public class BooksDemo implements Commands {
         }
     }
 
-    private static void loginPassword() {
-        System.out.println("Please, input login and password");
-        String login = scanner.nextLine();
-        String password = scanner.nextLine();
-        if (!login.equals(LOGIN) || !password.equals(PASSWORD)) {
-            System.err.println("Incorrect login or password");
-            loginPassword();
+    private static void userLogin() {
+        System.out.println("Welcome " + currentUser.getName());
+        boolean run = true;
+        while (run) {
+            Commands.printUserCommands();
+            int command;
+            try {
+                command = Integer.parseInt(scanner.nextLine());
+            } catch (NumberFormatException e) {
+                command = -1;
+            }
+            switch (command) {
+                case LOGOUT:
+                    currentUser = null;
+                    run = false;
+                    break;
+                case PRINT_ALL_BOOKS:
+                    bookStorage.print();
+                    break;
+                case PRINT_BOOKS_BY_AUTHOR_NAME:
+                    bookByAuthor();
+                    break;
+                case PRINT_BOOKS_BY_GENRE:
+                    bookByGenre();
+                    break;
+                case PRINT_BOOKS_BY_PRICE_RANGE:
+                    bookByPriceRange();
+                    break;
+                case PRINT_AUTHOR_BY_GENDER:
+                    printAuthorsByGender();
+                    break;
+                case PRINT_AUTHOR_BY_EMAIL:
+                    printAuthorsByEmail();
+                    break;
+                case PRINT_ALL_AUTHORS:
+                    authorStorage.print();
+                    break;
+                default:
+                    System.out.println("Please, try again");
+            }
         }
     }
 
@@ -228,4 +336,3 @@ public class BooksDemo implements Commands {
         }
     }
 }
-
