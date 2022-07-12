@@ -22,7 +22,7 @@ public interface Commands {
     }
 
     static void printUserCommands() {
-        System.out.println("Please, input " + LOGOUT + " for exit");
+        System.out.println("Please, input " + LOGOUT + " for logout");
         System.out.println("Please, input " + PRINT_ALL_BOOKS + " to print all the books");
         System.out.println("Please, input " + PRINT_BOOKS_BY_AUTHOR_NAME + " to show all the books by your favorite author");
         System.out.println("Please, input " + PRINT_BOOKS_BY_GENRE + " to show all the books of your favorite genre");
@@ -33,7 +33,7 @@ public interface Commands {
     }
 
     static void printAdminCommands() {
-        System.out.println("Please, input " + LOGOUT + " for exit");
+        System.out.println("Please, input " + LOGOUT + " for logout");
         System.out.println("Please, input " + PRINT_ALL_BOOKS + " to print all the books");
         System.out.println("Please, input " + PRINT_BOOKS_BY_AUTHOR_NAME + " to show all the books by your favorite author");
         System.out.println("Please, input " + PRINT_BOOKS_BY_GENRE + " to show all the books of your favorite genre");
@@ -43,6 +43,5 @@ public interface Commands {
         System.out.println("Please, input " + PRINT_ALL_AUTHORS + " to show all the authors");
         System.out.println("Please, input " + ADD_BOOK + " to add a book");
         System.out.println("Please, input " + ADD_AUTHOR + " to add the author");
-
     }
 }
