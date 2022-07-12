@@ -63,9 +63,9 @@ public class BooksDemo implements Commands {
                 System.out.println("Password is incorrect");
             } else {
                 currentUser = user;
-                if (user.getRegisteredRole() == Role.ADMIN) {
+                if (user.getRole() == Role.ADMIN) {
                     adminLogin();
-                } else if (user.getRegisteredRole() == Role.USER) {
+                } else if (user.getRole() == Role.USER) {
                     userLogin();
                 }
             }
