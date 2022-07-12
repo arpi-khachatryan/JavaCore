@@ -1,7 +1,7 @@
 package classwork.students.command;
 
 public interface Commands {
-    int EXIT = 0;
+    int LOGOUT = 0;
     int ADD_STUDENT = 1;
     int PRINT_ALL_STUDENTS = 2;
     int PRINT_STUDENTS_COUNT = 3;
@@ -11,8 +11,18 @@ public interface Commands {
     int ADD_LESSON = 7;
     int PRINT_ALL_LESSONS = 8;
 
-    static void printCommands() {
+    int EXIT = 0;
+    int LOGIN = 1;
+    int REGISTER = 2;
+
+    static void printLoginCommands() {
         System.out.println("Please input " + EXIT + " for exit");
+        System.out.println("Please input " + LOGIN + " for login");
+        System.out.println("Please input " + REGISTER + " for register");
+    }
+
+    static void printAdminCommands() {
+        System.out.println("Please input " + LOGOUT + " for logout");
         System.out.println("Please input " + ADD_STUDENT + " to add student");
         System.out.println("Please input " + PRINT_ALL_STUDENTS + " to print the student/students");
         System.out.println("Please input " + PRINT_STUDENTS_COUNT + " to print the number of students");
