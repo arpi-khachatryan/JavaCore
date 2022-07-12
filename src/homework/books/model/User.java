@@ -5,14 +5,14 @@ public class User {
     private String surName;
     private String email;
     private String password;
-    private Role registeredRole;
+    private Role role;
 
-    public User(String name, String surName, String email, String password, Role registeredRole) {
+    public User(String name, String surName, String email, String password, Role role) {
         this.name = name;
         this.surName = surName;
         this.email = email;
         this.password = password;
-        this.registeredRole = registeredRole;
+        this.role = role;
     }
 
     public User() {
@@ -50,12 +50,12 @@ public class User {
         this.password = password;
     }
 
-    public Role getRegisteredRole() {
-        return registeredRole;
+    public Role getRole() {
+        return role;
     }
 
-    public void setRegisteredRole(Role registeredRole) {
-        this.registeredRole = registeredRole;
+    public void setRegisteredRole(Role role) {
+        this.role = role;
     }
 
     @Override
@@ -64,7 +64,7 @@ public class User {
                 "name='" + name + '\'' +
                 ", surName='" + surName + '\'' +
                 ", email='" + email + '\'' +
-                ", registeredRole=" + registeredRole +
+                ", role=" + role +
                 '}';
     }
 }
