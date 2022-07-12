@@ -17,10 +17,15 @@ public class BooksDemo implements Commands {
     private static User currentUser = null;
 
     public static void main(String[] args) {
+
+        User admin = new User("admin", "admin", "admin@gmail.com", "admin", Role.ADMIN);
+        userStorage.add(admin);
+
         Author Nicholas = new Author("Nicholas", " Sparks", "nicholassparks.com", Gender.MALE);
         authorStorage.add(Nicholas);
-        bookStorage.add(new Book("MessageInABottle", Nicholas, 5, "novel", 3000));
-        userStorage.add(new User("admin", "admin", "admin@gmail.com", "admin", Role.ADMIN));
+
+        bookStorage.add(new Book("MessageInABottle", Nicholas, 5, "novel", 3000, admin));
+
         boolean run = true;
         while (run) {
             Commands.printInitialCommands();
@@ -218,7 +223,7 @@ public class BooksDemo implements Commands {
                 String genre = scanner.nextLine();
 
                 double price = truePrice();
-                Book book = new Book(title, author, count, genre, price);
+                Book book = new Book(title, author, count, genre, price, currentUser);
                 bookStorage.add(book);
                 System.out.println("Thank you, the book was added");
             } catch (AuthorNotFoundException e) {
