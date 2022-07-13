@@ -6,7 +6,7 @@ public class StackClass {
 
 
     public void push(char value) {
-        if (index == stck.length-1) {
+        if (index == stck.length - 1) {
             System.out.println("Stack is full");
         } else {
             stck[++index] = value;
