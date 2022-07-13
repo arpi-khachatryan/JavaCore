@@ -2,14 +2,14 @@ package homework.braceChecker;
 
 public class StackClass {
     public char[] stck = new char[30];
-    public int index = 0;
+    public int index = -1;
 
 
-    public void push(char volume) {
-        if (index == stck.length) {
+    public void push(char value) {
+        if (index == stck.length-1) {
             System.out.println("Stack is full");
         } else {
-            stck[++index] = volume;
+            stck[++index] = value;
 
         }
     }
