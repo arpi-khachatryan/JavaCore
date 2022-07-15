@@ -18,7 +18,7 @@ public class FileUtil {
         String path = scanner.nextLine();
         File myFolder = new File(path);        // /Users/annakhachatryan/IdeaProjects/JavaCore/src/homework/fileUtil/
 
-        String fileName = scanner.nextLine(); // fileExample.txt.txt
+        String fileName = scanner.nextLine(); // fileExample.txt
 
         if (myFolder.isDirectory()) {
             File[] files = myFolder.listFiles();
