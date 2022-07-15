@@ -7,7 +7,7 @@ public class FileUtil {
     private static Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) throws IOException {
-        fileSearch();            //1
+        //fileSearch();            //1
         //contentSearch();         //2
         //findLines();             //3
         //printSizeOfPackage();    //4
@@ -23,7 +23,7 @@ public class FileUtil {
         String path = scanner.nextLine();
         File myFolder = new File(path);        // /Users/annakhachatryan/IdeaProjects/JavaCore/src/homework/fileUtil/
 
-        String fileName = scanner.nextLine(); // fileExample.txt
+        String fileName = scanner.nextLine(); // fileExample.txt.txt
 
         if (myFolder.isDirectory()) {
             File[] files = myFolder.listFiles();
