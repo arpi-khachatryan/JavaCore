@@ -110,9 +110,6 @@ public class BooksDemo implements Commands {
                     currentUser = null;
                     run = false;
                     break;
-                case ADD_BOOK:
-                    addBooks();
-                    break;
                 case PRINT_ALL_BOOKS:
                     bookStorage.print();
                     break;
@@ -125,9 +122,6 @@ public class BooksDemo implements Commands {
                 case PRINT_BOOKS_BY_PRICE_RANGE:
                     bookByPriceRange();
                     break;
-                case ADD_AUTHOR:
-                    addAuthor();
-                    break;
                 case PRINT_AUTHOR_BY_GENDER:
                     printAuthorsByGender();
                     break;
@@ -136,6 +130,12 @@ public class BooksDemo implements Commands {
                     break;
                 case PRINT_ALL_AUTHORS:
                     authorStorage.print();
+                    break;
+                case ADD_BOOK:
+                    addBooks();
+                    break;
+                case ADD_AUTHOR:
+                    addAuthor();
                     break;
                 default:
                     System.out.println("Please, try again");
