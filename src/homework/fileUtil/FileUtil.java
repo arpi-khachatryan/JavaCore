@@ -36,7 +36,7 @@ public class FileUtil {
         String keyword = scanner.nextLine();
         File[] files = folder.listFiles();
         for (File file : files) {
-            if (file.getName().contains(".txt")) {
+            if (file.getName().endsWith(".txt")) {
                 try (BufferedReader bufferedReader = new BufferedReader(new FileReader(file.getPath()))) {
                     String line = "";
                     while ((line = bufferedReader.readLine()) != null) {
