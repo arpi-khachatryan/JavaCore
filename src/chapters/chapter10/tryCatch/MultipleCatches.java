@@ -4,7 +4,7 @@ public class MultipleCatches {
     public static void main(String[] args) {
         try {
             int a = args.length;
-            System.out.println("a = " + a);
+            System.out.println("aa.txt = " + a);
             int b = 42 / a;
             int c[] = {1};
             c[5] = 99;
