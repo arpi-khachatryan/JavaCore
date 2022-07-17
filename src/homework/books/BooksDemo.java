@@ -234,7 +234,7 @@ public class BooksDemo implements Commands {
                 addBook();
             }
         } catch (NumberFormatException e) {
-            System.out.println("Please input only a number");
+            System.out.println("Please input only aa.txt number");
             addBook();
         }
     }
@@ -245,7 +245,7 @@ public class BooksDemo implements Commands {
             System.out.println("Please input the number of books");
             count = Double.parseDouble(scanner.nextLine());
         } catch (NumberFormatException e) {
-            System.out.println("Please input only a number");
+            System.out.println("Please input only aa.txt number");
             trueCount();
         }
         return count;
@@ -257,7 +257,7 @@ public class BooksDemo implements Commands {
             System.out.println("Please input the price of the book");
             price = Double.parseDouble(scanner.nextLine());
         } catch (NumberFormatException e) {
-            System.out.println("Please input only a number");
+            System.out.println("Please input only aa.txt number");
             truePrice();
         }
         return price;
@@ -292,7 +292,7 @@ public class BooksDemo implements Commands {
             max = Double.parseDouble(scanner.nextLine());
             bookStorage.bookByPriceRange(min, max);
         } catch (NumberFormatException e) {
-            System.out.println("Please input only a number");
+            System.out.println("Please input only aa.txt number");
             bookByPriceRange();
         }
     }
