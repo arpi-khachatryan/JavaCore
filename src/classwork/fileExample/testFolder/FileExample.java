@@ -2,9 +2,10 @@ package classwork.fileExample.testFolder;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Date;
 
 public class FileExample {
-    static String filePath = "/Users/annakhachatryan/IdeaProjects/JavaCore/src/classwork/fileExample.txt/testFolder/hello.txt";
+    static String filePath = "/Users/annakhachatryan/IdeaProjects/JavaCore/src/classwork/fileExample/testFolder/hello.txt";
     static String newFilePath = "/Users/annakhachatryan/IdeaProjects/JavaCore/src/classwork/fileExample.txt/testFolder/hello3.txt";
 
     public static void main(String[] args) throws IOException {
@@ -39,5 +40,9 @@ public class FileExample {
         System.out.println(myFile.isHidden());
         System.out.println(myFile.lastModified());
         System.out.println(myFile.toString());
+
+
+        Date date = new Date(myFile.lastModified());
+        System.out.println(date);
     }
 }
