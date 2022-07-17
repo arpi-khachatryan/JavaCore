@@ -6,7 +6,7 @@ public class UseStatic {
 
     static void meth(int x) {
         System.out.println("x = " + x);
-        System.out.println("a = " + a);
+        System.out.println("aa.txt = " + a);
         System.out.println("b = " + b);
     }
 
