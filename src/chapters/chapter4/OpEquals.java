@@ -9,7 +9,7 @@ public class OpEquals {
         b *= 4;
         c += a * b;
         c %= 6;
-        System.out.println("a = " + a);
+        System.out.println("aa.txt = " + a);
         System.out.println("b = " + b);
         System.out.println("c = " + c);
     }
