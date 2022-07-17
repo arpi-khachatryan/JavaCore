@@ -7,10 +7,10 @@ public class OverloadVariant {
     }
 
     void test(int a, int b) {
-        System.out.println("a & b: " + a + " " + b);
+        System.out.println("aa.txt & b: " + a + " " + b);
     }
 
     void test(double a) {
-        System.out.println("double a: " + a);
+        System.out.println("double aa.txt: " + a);
     }
 }
