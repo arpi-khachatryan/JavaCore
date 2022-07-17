@@ -1,5 +1,9 @@
 package classwork.students.model;
 
+import java.util.Date;
+
+import static classwork.students.util.DateUtil.dateToString;
+
 public class Student {
     private String name;
     private String surname;
@@ -8,8 +12,9 @@ public class Student {
     private String city;
     private Lesson lesson;
     private User registeredUser;
+    private Date registrationDate;
 
-    public Student(String name, String surname, int age, String phoneNumber, String city, Lesson lesson, User registeredUser) {
+    public Student(String name, String surname, int age, String phoneNumber, String city, Lesson lesson, User registeredUser, Date registrationDate) {
         this.name = name;
         this.surname = surname;
         this.age = age;
@@ -17,6 +22,7 @@ public class Student {
         this.city = city;
         this.lesson = lesson;
         this.registeredUser = registeredUser;
+        this.registrationDate = registrationDate;
     }
 
     public Student() {
@@ -78,6 +84,14 @@ public class Student {
         this.registeredUser = registeredUser;
     }
 
+    public Date getRegosterDate() {
+        return registrationDate;
+    }
+
+    public void setRegosterDate(Date regosterDate) {
+        this.registrationDate = regosterDate;
+    }
+
     @Override
     public String toString() {
         return "Student{" +
@@ -88,6 +102,7 @@ public class Student {
                 ", city='" + city + '\'' +
                 ", lesson='" + lesson.getName() + '\'' +
                 ", registeredUser='" + registeredUser + '\'' +
+                ", regosterDate='" + dateToString(registrationDate) + '\'' +
                 '}';
     }
 }
