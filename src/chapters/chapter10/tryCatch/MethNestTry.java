@@ -19,7 +19,7 @@ public class MethNestTry {
         try {
             int a = 1;
             int b = 42 / a;
-            System.out.println("a = " + a);
+            System.out.println("aa.txt = " + a);
             nestTry(a);
         } catch (ArithmeticException e) {
             System.out.println(e);
