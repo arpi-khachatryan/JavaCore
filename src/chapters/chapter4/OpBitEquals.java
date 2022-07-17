@@ -10,7 +10,7 @@ public class OpBitEquals {
         b >>= 1;
         c <<= 1;
         a ^= c;
-        System.out.println("a = " + a);
+        System.out.println("aa.txt = " + a);
         System.out.println("b = " + b);
         System.out.println("c = " + c);
     }
