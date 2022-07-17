@@ -5,7 +5,7 @@ public class NestTry {
         try {
             int a = 2;
             int b = 42 / a;
-            System.out.println("a = " + a);
+            System.out.println("aa.txt = " + a);
             try {
                 if (a == 1) {
                     a = a / (a - a);
