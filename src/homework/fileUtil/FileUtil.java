@@ -7,22 +7,31 @@ public class FileUtil {
     private static Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) throws IOException {
-        fileSearch();
-        contentSearch();
-        findLines();
-        printSizeOfPackage();
-        createFileWithContent();
+        recursiveFileSearch();
+        //contentSearch();
+        //findLines();
+        //printSizeOfPackage();
+        //createFileWithContent();
     }
 
-    static void fileSearch() {
+    static void recursiveFileSearch() {
         String path = scanner.nextLine();
-        File myFolder = new File(path);
         String fileName = scanner.nextLine();
+        fileSearch(path, fileName);
+    }
+
+    static void fileSearch(String path, String fileName) {
+        File myFolder = new File(path);
         if (myFolder.isDirectory()) {
             File[] files = myFolder.listFiles();
             for (File file : files) {
                 if (file.getName().equals(fileName)) {
-                    System.out.println(true);
+                    System.out.println(myFolder.getName() + " " + true);
+                    break;
+                } else {
+                    if (file.isDirectory()) {
+                        fileSearch(file.getPath(), fileName);
+                    }
                 }
             }
         } else {
