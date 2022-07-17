@@ -5,6 +5,6 @@ public class StaticByName {
     static int b = 99;
 
     static void callme() {
-        System.out.println("a = " + a);
+        System.out.println("aa.txt = " + a);
     }
 }
