@@ -1,6 +1,9 @@
 package homework.books.model;
 
 import classwork.students.model.User;
+import homework.books.util.DateUtil;
+
+import java.util.Date;
 
 public class Book {
     private String title;
@@ -9,17 +12,19 @@ public class Book {
     private String genre;
     private double price;
     private User registeredUser;
+    private Date registrationDate;
 
-    public Book(String title, Author author, double count, String genre, double price, User registeredUser) {
+    public Book(String title, Author author, double count, String genre, double price, User registeredUser, Date registrationDate) {
         this.title = title;
         this.author = author;
         this.count = count;
         this.genre = genre;
         this.price = price;
         this.registeredUser = registeredUser;
+        this.registrationDate = registrationDate;
     }
 
-    public Book(String title, Author author, double count, String genre, double price, homework.books.model.User currentUser) {
+    public Book(String messageInABottle, Author nicholas, double count, String novel, double price, homework.books.model.User admin, Date registrationDate) {
     }
 
     public String getTitle() {
@@ -70,6 +75,14 @@ public class Book {
         this.registeredUser = registeredUser;
     }
 
+    public Date getRegistrationDate() {
+        return registrationDate;
+    }
+
+    public void setRegistrationDate(Date registrationDate) {
+        registrationDate = registrationDate;
+    }
+
     @Override
     public String toString() {
         return "Book{" +
@@ -79,6 +92,7 @@ public class Book {
                 ", genre='" + genre + '\'' +
                 ", price=" + price +
                 ", registeredUser=" + registeredUser +
+                ", registrationDate=" + DateUtil.dateToString(registrationDate) +
                 '}';
     }
 }
