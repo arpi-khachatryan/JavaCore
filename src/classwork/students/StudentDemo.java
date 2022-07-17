@@ -10,7 +10,10 @@ import classwork.students.storage.LessonStorage;
 import classwork.students.storage.StudentStorage;
 import classwork.students.storage.UserStorage;
 
+import java.util.Date;
 import java.util.Scanner;
+
+import static classwork.students.util.DateUtil.stringToDate;
 
 public class StudentDemo implements Commands, UserCommands {
     private static Scanner scanner = new Scanner(System.in);
@@ -20,11 +23,7 @@ public class StudentDemo implements Commands, UserCommands {
     private static User currentUser = null;
 
     public static void main(String[] args) {
-        Lesson java = new Lesson("java", "Galstyan", 5, 5000);
-        lessonStorage.add(java);
-        User admin = new User("admin", "admin", "admin@gmail.com", "admin", Role.ADMIN);
-        userStorage.add(admin);
-        studentStorage.add(new Student("Tigran", "Tigranyan", 18, "099", "Yerevan", java, admin));
+        initData();
         boolean run = true;
         while (run) {
             Commands.printLoginCommands();
@@ -48,6 +47,14 @@ public class StudentDemo implements Commands, UserCommands {
                     System.out.println("Invalid command, please try again");
             }
         }
+    }
+
+    private static void initData() {
+        Lesson java = new Lesson("java", "Galstyan", 5, 5000, stringToDate("12/03/2022"));
+        lessonStorage.add(java);
+        User admin = new User("admin", "admin", "admin@gmail.com", "admin", Role.ADMIN);
+        userStorage.add(admin);
+        studentStorage.add(new Student("Tigran", "Tigranyan", 18, "099", "Yerevan", java, admin, new Date()));
     }
 
     private static void login() {
@@ -205,7 +212,7 @@ public class StudentDemo implements Commands, UserCommands {
                     System.out.println("Please input the student's city");
                     String city = scanner.nextLine();
 
-                    Student student = new Student(name, surname, age, phoneNumber, city, lesson, currentUser);
+                    Student student = new Student(name, surname, age, phoneNumber, city, lesson, currentUser, new Date());
                     studentStorage.add(student);
                     System.out.println("Thank you, student was added");
                 }
@@ -280,7 +287,10 @@ public class StudentDemo implements Commands, UserCommands {
         System.out.println("PLease input the price of the lesson");
         double price = Double.parseDouble(scanner.nextLine());
 
-        Lesson lesson = new Lesson(name, teacherName, duration, price);
+        System.out.println("Please input the date the subject started");
+        String StrDate = scanner.nextLine();
+
+        Lesson lesson = new Lesson(name, teacherName, duration, price, stringToDate(StrDate));
         lessonStorage.add(lesson);
         System.out.println("The lesson was created");
     }
