@@ -224,7 +224,7 @@ public class BooksDemo implements Commands {
                 System.out.println("Please input the genre of the book");
                 String genre = scanner.nextLine();
                 double price = truePrice();
-                System.out.println("");
+                System.out.println("Please input the date");
                 String strDate = scanner.nextLine();
                 Book book = new Book(title, author, count, genre, price, currentUser, stringToDate(strDate));
                 bookStorage.add(book);
@@ -305,7 +305,7 @@ public class BooksDemo implements Commands {
         System.out.println("Please input the authors's email address");
         String email = scanner.nextLine();
         Gender gender = trueGender();
-        System.out.println("Please input date");
+        System.out.println("Please input the date");
         String strDate = scanner.nextLine();
         Author author = new Author(name, surname, email, gender, stringToDate(strDate));
         authorStorage.add(author);
