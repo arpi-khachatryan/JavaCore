@@ -9,7 +9,7 @@ public class IncDec {
         c = ++b;
         d = a++;
         c++;
-        System.out.println("a = " + a);
+        System.out.println("aa.txt = " + a);
         System.out.println("b = " + b);
         System.out.println("c = " + c);
         System.out.println("d = " + d);
