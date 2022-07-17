@@ -15,7 +15,7 @@ public class HandleError {
                 System.out.println("0-ի բաժանում");
                 a = 0;
             }
-            System.out.println("a: " + a);
+            System.out.println("aa.txt: " + a);
         }
     }
 }
