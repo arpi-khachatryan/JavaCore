@@ -6,8 +6,11 @@ import homework.books.model.*;
 import homework.books.storage.AuthorStorage;
 import homework.books.storage.BookStorage;
 import homework.books.storage.UserStorage;
+import homework.books.util.DateUtil;
 
 import java.util.Scanner;
+
+import static homework.books.util.DateUtil.stringToDate;
 
 public class BooksDemo implements Commands {
     private static Scanner scanner = new Scanner(System.in);
@@ -17,15 +20,7 @@ public class BooksDemo implements Commands {
     private static User currentUser = null;
 
     public static void main(String[] args) {
-
-        User admin = new User("admin", "admin", "admin@gmail.com", "admin", Role.ADMIN);
-        userStorage.add(admin);
-
-        Author Nicholas = new Author("Nicholas", " Sparks", "nicholassparks.com", Gender.MALE);
-        authorStorage.add(Nicholas);
-
-        bookStorage.add(new Book("MessageInABottle", Nicholas, 5, "novel", 3000, admin));
-
+        initData();
         boolean run = true;
         while (run) {
             Commands.printInitialCommands();
@@ -49,6 +44,14 @@ public class BooksDemo implements Commands {
                     System.out.println("Please, try again");
             }
         }
+    }
+
+    private static void initData() {
+        User admin = new User("admin", "admin", "admin@gmail.com", "admin", Role.ADMIN);
+        userStorage.add(admin);
+        Author Nicholas = new Author("Nicholas", " Sparks", "nicholassparks.com", Gender.MALE, DateUtil.stringToDate("02.09.2022"));
+        authorStorage.add(Nicholas);
+        bookStorage.add(new Book("MessageInABottle", Nicholas, 5, "novel", 3000, admin, stringToDate("21.04.2022")));
     }
 
     private static void login() {
@@ -217,13 +220,13 @@ public class BooksDemo implements Commands {
                 Author author = authorStorage.getAuthorByIndex(index);
                 System.out.println("Please input the title of the books");
                 String title = scanner.nextLine();
-
                 double count = trueCount();
                 System.out.println("Please input the genre of the book");
                 String genre = scanner.nextLine();
-
                 double price = truePrice();
-                Book book = new Book(title, author, count, genre, price, currentUser);
+                System.out.println("");
+                String strDate = scanner.nextLine();
+                Book book = new Book(title, author, count, genre, price, currentUser, stringToDate(strDate));
                 bookStorage.add(book);
                 System.out.println("Thank you, the book was added");
             } catch (AuthorNotFoundException e) {
@@ -302,7 +305,9 @@ public class BooksDemo implements Commands {
         System.out.println("Please input the authors's email address");
         String email = scanner.nextLine();
         Gender gender = trueGender();
-        Author author = new Author(name, surname, email, gender);
+        System.out.println("Please input date");
+        String strDate = scanner.nextLine();
+        Author author = new Author(name, surname, email, gender, stringToDate(strDate));
         authorStorage.add(author);
         System.out.println("Thank you, the author was added");
     }
