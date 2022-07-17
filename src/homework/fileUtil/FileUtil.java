@@ -22,7 +22,7 @@ public class FileUtil {
             File[] files = myFolder.listFiles();
             for (File file : files) {
                 if (file.getName().equals(fileName)) {
-                    System.out.println("true");
+                    System.out.println(true);
                 }
             }
         } else {
@@ -40,11 +40,9 @@ public class FileUtil {
                 try (BufferedReader bufferedReader = new BufferedReader(new FileReader(file.getPath()))) {
                     String line = "";
                     while ((line = bufferedReader.readLine()) != null) {
-                        for (String s : line.split(" ")) {
-                            if (s.equals(keyword)) {
-                                System.out.println(file.getName());
-                                break;
-                            }
+                        if (line.contains(keyword)) {
+                            System.out.println(file.getName());
+                            break;
                         }
                     }
                 } catch (IOException e) {
