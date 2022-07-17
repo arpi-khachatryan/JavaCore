@@ -10,6 +10,6 @@ public class AccessTestDemo {
 
         at.setc(30);
 
-        System.out.println("a, b, c: " + at.a + " " + at.b + " " + at.getc());
+        System.out.println("aa.txt, b, c: " + at.a + " " + at.b + " " + at.getc());
     }
 }
