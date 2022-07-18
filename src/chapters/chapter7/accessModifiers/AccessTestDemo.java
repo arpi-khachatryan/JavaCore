@@ -1,7 +1,5 @@
 package chapters.chapter7.accessModifiers;
 
-import chapters.chapter7.accessModifiers.AccessTest;
-
 public class AccessTestDemo {
     public static void main(String[] args) {
         AccessTest at = new AccessTest();
@@ -10,6 +8,6 @@ public class AccessTestDemo {
 
         at.setc(30);
 
-        System.out.println("aa.txt, b, c: " + at.a + " " + at.b + " " + at.getc());
+        System.out.println("a, b, c: " + at.a + " " + at.b + " " + at.getc());
     }
 }
