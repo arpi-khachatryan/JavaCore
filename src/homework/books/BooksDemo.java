@@ -45,12 +45,12 @@ public class BooksDemo implements Commands {
         }
     }
 
-    private static void initData() {
+    private static void initData() { //porceq nayem
         User admin = new User("admin", "admin", "admin@gmail.com", "admin", Role.ADMIN);
         userStorage.add(admin);
-        Author Nicholas = new Author("Nicholas", " Sparks", "nicholassparks.com", Gender.MALE, stringToDate("02.09.2022"));
-        authorStorage.add(Nicholas);
-        bookStorage.add(new Book("MessageInABottle", Nicholas, 5, "novel", 3000, admin, stringToDate("21.04.2022")));
+        Author nicholas = new Author("Nicholas", " Sparks", "nicholassparks.com", Gender.MALE, stringToDate("02.09.2022"));
+        authorStorage.add(nicholas);
+        bookStorage.add(new Book("MessageInABottle", nicholas, 4, "novel", 2000, admin, stringToDate("01.01.2022")));
     }
 
     private static void login() {
@@ -197,10 +197,10 @@ public class BooksDemo implements Commands {
             authorStorage.print();
             System.out.println("Do you want to add an author, YES or NO?");
             String answer = scanner.nextLine();
-            if (answer.toUpperCase().equals("YES")) {
+            if (answer.equalsIgnoreCase("YES")) {
                 addAuthor();
                 addBook();
-            } else if (answer.toUpperCase().equals("NO")) {
+            } else if (answer.equalsIgnoreCase("NO")) {
                 addBook();
             } else {
                 System.out.println("Unclear answer");
