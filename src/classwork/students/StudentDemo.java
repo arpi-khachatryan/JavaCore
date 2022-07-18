@@ -217,7 +217,7 @@ public class StudentDemo implements Commands, UserCommands {
                     System.out.println("Thank you, student was added");
                 }
             } catch (NumberFormatException e) {
-                System.out.println("Please input only aa.txt number");
+                System.out.println("Please input only a number");
                 addStudent();
             }
         }
@@ -230,7 +230,7 @@ public class StudentDemo implements Commands, UserCommands {
             int index = Integer.parseInt(scanner.nextLine());
             studentStorage.delete(index);
         } catch (NumberFormatException e) {
-            System.out.println("Please input only aa.txt number");
+            System.out.println("Please input only a number");
             deleteStudentByIndex();
         }
     }
@@ -261,7 +261,7 @@ public class StudentDemo implements Commands, UserCommands {
                         changeLesson();
                     }
                 } catch (NumberFormatException e) {
-                    System.out.println("Please input only aa.txt number");
+                    System.out.println("Please input only a number");
                     changeLesson();
                 }
             } else {
@@ -269,7 +269,7 @@ public class StudentDemo implements Commands, UserCommands {
                 changeLesson();
             }
         } catch (NumberFormatException e) {
-            System.out.println("Please input only aa.txt number");
+            System.out.println("Please input only a number");
             changeLesson();
         }
     }
