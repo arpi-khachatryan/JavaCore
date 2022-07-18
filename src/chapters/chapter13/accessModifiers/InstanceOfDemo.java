@@ -10,7 +10,7 @@ public class InstanceOfDemo {
         D d = new D();
 
         if (a instanceof InstanceOf) {
-            System.out.println("aa.txt-ն A-ի էկզեմպլյարն է");
+            System.out.println("a-ն A-ի էկզեմպլյարն է");
         }
         if (b instanceof B) {
             System.out.println("b-ն B-ի էկզեմպլյարն է");
@@ -22,7 +22,7 @@ public class InstanceOfDemo {
             System.out.println("c-ն կարելի է վերագրել A-ին");
         }
         if (a instanceof C) {
-            System.out.println("aa.txt-ն կարելի է վերագրել C-ին");
+            System.out.println("a-ն կարելի է վերագրել C-ին");
         }
 
         System.out.println();
@@ -45,7 +45,7 @@ public class InstanceOfDemo {
             System.out.println();
 
             if (a instanceof Object) {
-                System.out.println("aa.txt -ն կարելի է վերագրել Object-ին");
+                System.out.println("a -ն կարելի է վերագրել Object-ին");
             }
             if (b instanceof Object) {
                 System.out.println("b-ն կարելի է վերագրել Object-ին");
