@@ -1,9 +1,8 @@
 package homework.books.model;
 
-import classwork.students.model.User;
-import homework.books.util.DateUtil;
-
 import java.util.Date;
+
+import static homework.books.util.DateUtil.dateToString;
 
 public class Book {
     private String title;
@@ -24,7 +23,7 @@ public class Book {
         this.registrationDate = registrationDate;
     }
 
-    public Book(String messageInABottle, Author nicholas, double count, String novel, double price, homework.books.model.User admin, Date registrationDate) {
+    public Book() {
     }
 
     public String getTitle() {
@@ -80,7 +79,7 @@ public class Book {
     }
 
     public void setRegistrationDate(Date registrationDate) {
-        registrationDate = registrationDate;
+        this.registrationDate = registrationDate;
     }
 
     @Override
@@ -92,7 +91,7 @@ public class Book {
                 ", genre='" + genre + '\'' +
                 ", price=" + price +
                 ", registeredUser=" + registeredUser +
-                ", registrationDate=" + DateUtil.dateToString(registrationDate) +
+                ", registrationDate=" + dateToString(registrationDate) +
                 '}';
     }
 }
