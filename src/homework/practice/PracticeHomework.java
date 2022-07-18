@@ -17,7 +17,7 @@ public class PracticeHomework {
         return ++number;
     }
 
-    //վերդարձնել true,եթե տրված aa.txt եւ b թվերը իրար հավասար են, եթե ոչ՝ false
+    //վերդարձնել true,եթե տրված a եւ b թվերը իրար հավասար են, եթե ոչ՝ false
     boolean isSameNum(int a, int b) {
         return a == b;
     }
