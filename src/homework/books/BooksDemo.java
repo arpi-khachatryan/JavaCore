@@ -6,7 +6,6 @@ import homework.books.model.*;
 import homework.books.storage.AuthorStorage;
 import homework.books.storage.BookStorage;
 import homework.books.storage.UserStorage;
-import homework.books.util.DateUtil;
 
 import java.util.Scanner;
 
@@ -49,7 +48,7 @@ public class BooksDemo implements Commands {
     private static void initData() {
         User admin = new User("admin", "admin", "admin@gmail.com", "admin", Role.ADMIN);
         userStorage.add(admin);
-        Author Nicholas = new Author("Nicholas", " Sparks", "nicholassparks.com", Gender.MALE, DateUtil.stringToDate("02.09.2022"));
+        Author Nicholas = new Author("Nicholas", " Sparks", "nicholassparks.com", Gender.MALE, stringToDate("02.09.2022"));
         authorStorage.add(Nicholas);
         bookStorage.add(new Book("MessageInABottle", Nicholas, 5, "novel", 3000, admin, stringToDate("21.04.2022")));
     }
@@ -234,7 +233,7 @@ public class BooksDemo implements Commands {
                 addBook();
             }
         } catch (NumberFormatException e) {
-            System.out.println("Please input only aa.txt number");
+            System.out.println("Please input only a number");
             addBook();
         }
     }
@@ -245,7 +244,7 @@ public class BooksDemo implements Commands {
             System.out.println("Please input the number of books");
             count = Double.parseDouble(scanner.nextLine());
         } catch (NumberFormatException e) {
-            System.out.println("Please input only aa.txt number");
+            System.out.println("Please input only a number");
             trueCount();
         }
         return count;
@@ -257,7 +256,7 @@ public class BooksDemo implements Commands {
             System.out.println("Please input the price of the book");
             price = Double.parseDouble(scanner.nextLine());
         } catch (NumberFormatException e) {
-            System.out.println("Please input only aa.txt number");
+            System.out.println("Please input only a number");
             truePrice();
         }
         return price;
@@ -292,7 +291,7 @@ public class BooksDemo implements Commands {
             max = Double.parseDouble(scanner.nextLine());
             bookStorage.bookByPriceRange(min, max);
         } catch (NumberFormatException e) {
-            System.out.println("Please input only aa.txt number");
+            System.out.println("Please input only a number");
             bookByPriceRange();
         }
     }
