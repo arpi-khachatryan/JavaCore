@@ -5,9 +5,9 @@ public class CallByValueDemo {
         CallByValue test = new CallByValue();
         int a = 15;
         int b = 20;
-        System.out.println("aa.txt & b: " + a + " " + b);
+        System.out.println("a & b: " + a + " " + b);
 
         test.meth(a, b);
-        System.out.println("aa.txt & b: " + a + " " + b);
+        System.out.println("a & b: " + a + " " + b);
     }
 }
