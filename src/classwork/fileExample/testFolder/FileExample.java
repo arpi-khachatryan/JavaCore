@@ -1,6 +1,7 @@
 package classwork.fileExample.testFolder;
 
 import java.io.File;
+import java.io.FilenameFilter;
 import java.io.IOException;
 import java.util.Date;
 
@@ -12,6 +13,15 @@ public class FileExample {
         File myFile = new File(filePath);
         System.out.println(myFile.exists());
         System.out.println(myFile.exists());
+
+        String separator = File.separator;// path-ը գրելու համար
+
+        myFile.listFiles(new FilenameFilter() {
+            @Override
+            public boolean accept(File dir, String name) {
+                return name.endsWith(".txt");
+            }
+        });
 
         if (!myFile.exists()) {
             myFile.createNewFile();
@@ -28,7 +38,6 @@ public class FileExample {
                 }
             }
         }
-
         System.out.println(myFile.canWrite());
 
         File parentFile = myFile.getParentFile();
@@ -40,7 +49,6 @@ public class FileExample {
         System.out.println(myFile.isHidden());
         System.out.println(myFile.lastModified());
         System.out.println(myFile.toString());
-
 
         Date date = new Date(myFile.lastModified());
         System.out.println(date);
