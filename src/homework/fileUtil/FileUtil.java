@@ -96,7 +96,7 @@ public class FileUtil {
         String fileName = scanner.nextLine();
         String content = scanner.nextLine();
         String filePath = folder.getPath();
-        filePath += "/" + fileName;
+        filePath += File.separator + fileName;
         File file = new File(filePath);
         if (!file.exists()) {
             file.createNewFile();
