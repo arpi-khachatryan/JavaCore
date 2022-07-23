@@ -9,7 +9,7 @@ public class BoundsDemo {
 
         Double dnums[] = {1.1, 2.2, 3.3, 4.4, 5.5};
         Stats<Double> dOb = new Stats<>(dnums);
-        double w = iOb.average();
+        double w = dOb.average();
         System.out.println(w);
     }
 }
