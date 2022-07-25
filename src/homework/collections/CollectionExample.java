@@ -62,8 +62,12 @@ public class CollectionExample {
     }
 
     static void printFirstFive(List<String> list) {
-        for (int i = 0; i < 5; i++) {
-            System.out.println(list.get(i));
+        if (list.size() >= 5) {
+            for (int i = 0; i < 5; i++) {
+                System.out.println(list.get(i));
+            }
+        } else {
+            System.out.println(list);
         }
     }
 
