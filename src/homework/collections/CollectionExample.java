@@ -19,7 +19,7 @@ public class CollectionExample {
         intList.add(9);
         intList.add(8);
 
-        System.out.println(arrayToList(new String[]{"arrayList", "LinkedList", "Vector"}));
+        System.out.println(arrayToList(new String[]{"ArrayList", "LinkedList", "Vector"}));
         System.out.println(removeById(strList, 1));
         System.out.println(listToSet(strList));
         System.out.println(listToLinkedList(intList));
@@ -29,9 +29,11 @@ public class CollectionExample {
     }
 
     static List<String> arrayToList(String[] values) {
-        List<String[]> arrayList = new ArrayList<>();
-        arrayList.add(values);
-        return Arrays.asList(values);
+        List<String> arrayList = new ArrayList<>();
+        for (int i = 0; i < values.length; i++) {
+            arrayList.add(values[i]);
+        }
+        return arrayList;
     }
 
     static List<String> removeById(List<String> list, int index) {
