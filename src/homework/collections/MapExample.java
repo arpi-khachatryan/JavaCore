@@ -40,7 +40,9 @@ public class MapExample {
     }
 
     static void printAllMembers(Map<Integer, String> memberMap) {
-        System.out.println(memberMap.toString());
+        for (Map.Entry<Integer, String> integerStringEntry : memberMap.entrySet()) {
+            System.out.println(integerStringEntry);
+        }
     }
 
     static class FootballTeamMember {
