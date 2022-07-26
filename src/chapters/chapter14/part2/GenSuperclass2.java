@@ -1,9 +1,9 @@
-package chapters.chapter14.lesson2;
+package chapters.chapter14.part2;
 
-public class Superclass2Gen<T> {
+public class GenSuperclass2<T> {
     T ob;
 
-    Superclass2Gen(T o) {
+    GenSuperclass2(T o) {
         ob = o;
     }
 
@@ -12,7 +12,7 @@ public class Superclass2Gen<T> {
     }
 }
 
-class Gen3<T, V> extends Superclass2Gen<T> {
+class Gen3<T, V> extends GenSuperclass2<T> {
     V ob2;
 
     Gen3(T o, V o2) {
