@@ -9,20 +9,24 @@ public class MapExample {
     public static void main(String[] args) {
         List<FootballTeamMember> members = new ArrayList<>();
         members.add(new FootballTeamMember(1, "Tigran"));
-        System.out.println(createFootballTeam(members));
+        members.add(new FootballTeamMember(2, "Tigran"));
 
         Map<Integer, String> footballTeamMember = new HashMap<>();
         footballTeamMember.put(11, "Poxos Poxosyan");
         footballTeamMember.put(12, "Petros Petrosyan");
+
+        System.out.println(createFootballTeam(members));
         System.out.println(removeFromMap(footballTeamMember, 11));
         printAllMemberNames(footballTeamMember);
         printAllMembers(footballTeamMember);
     }
 
     static Map<Integer, String> createFootballTeam(List<FootballTeamMember> members) {
-        FootballTeamMember footballTeamMember = members.get(0);
         Map<Integer, String> footballTeamMembers = new HashMap<>();
-        footballTeamMembers.put(footballTeamMember.getNumber(), footballTeamMember.getName());
+        for (int i = 0; i < members.size(); i++) {
+            FootballTeamMember footballTeamMember = members.get(i);
+            footballTeamMembers.put(footballTeamMember.getNumber(), footballTeamMember.getName());
+        }
         return footballTeamMembers;
     }
 
