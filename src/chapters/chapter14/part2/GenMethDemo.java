@@ -1,4 +1,4 @@
-package chapters.chapter14.lesson2;
+package chapters.chapter14.part2;
 
 public class GenMethDemo {
     static <T extends Comparable<T>, V extends T> boolean isIn(T x, V[] y) {
