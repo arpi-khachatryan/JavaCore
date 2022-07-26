@@ -1,4 +1,4 @@
-package chapters.chapter14.lesson2;
+package chapters.chapter14.part2;
 
 public class Gen<T> {
     T ob;
