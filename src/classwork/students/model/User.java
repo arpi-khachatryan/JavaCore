@@ -7,9 +7,9 @@ public class User {
     private String password;
     private Role role;
 
-    public User(String name, String surName, String email, String password, Role role) {
+    public User(String name, String surname, String email, String password, Role role) {
         this.name = name;
-        this.surname = surName;
+        this.surname = surname;
         this.email = email;
         this.password = password;
         this.role = role;
@@ -26,12 +26,12 @@ public class User {
         this.name = name;
     }
 
-    public String getSurName() {
+    public String getSurname() {
         return surname;
     }
 
-    public void setSurName(String surName) {
-        this.surname = surName;
+    public void setSurname(String surName) {
+        this.surname = surname;
     }
 
     public String getEmail() {
@@ -62,7 +62,7 @@ public class User {
     public String toString() {
         return "User{" +
                 "name='" + name + '\'' +
-                ", surName='" + surname + '\'' +
+                ", surname='" + surname + '\'' +
                 ", email='" + email + '\'' +
                 ", role=" + role +
                 '}';
