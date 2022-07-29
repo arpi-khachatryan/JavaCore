@@ -1,4 +1,4 @@
-package classwork.map;
+package classwork.collections.comparator;
 
 import java.util.Set;
 import java.util.TreeSet;
