@@ -2,14 +2,14 @@ package classwork.students.model;
 
 public class User {
     private String name;
-    private String surName;
+    private String surname;
     private String email;
     private String password;
     private Role role;
 
     public User(String name, String surName, String email, String password, Role role) {
         this.name = name;
-        this.surName = surName;
+        this.surname = surName;
         this.email = email;
         this.password = password;
         this.role = role;
@@ -27,11 +27,11 @@ public class User {
     }
 
     public String getSurName() {
-        return surName;
+        return surname;
     }
 
     public void setSurName(String surName) {
-        this.surName = surName;
+        this.surname = surName;
     }
 
     public String getEmail() {
@@ -62,7 +62,7 @@ public class User {
     public String toString() {
         return "User{" +
                 "name='" + name + '\'' +
-                ", surName='" + surName + '\'' +
+                ", surName='" + surname + '\'' +
                 ", email='" + email + '\'' +
                 ", role=" + role +
                 '}';
