@@ -29,11 +29,7 @@ public class CollectionExample {
     }
 
     static List<String> arrayToList(String[] values) {
-        List<String> arrayList = new ArrayList<>();
-        for (int i = 0; i < values.length; i++) {
-            arrayList.add(values[i]);
-        }
-        return arrayList;
+        return Arrays.asList(values);
     }
 
     static List<String> removeById(List<String> list, int index) {
@@ -42,15 +38,11 @@ public class CollectionExample {
     }
 
     static Set<String> listToSet(List<String> list) {
-        Set<String> strList = new HashSet<>();
-        strList.addAll(list);
-        return strList;
+        return new HashSet<>(list);
     }
 
     static LinkedList<Integer> listToLinkedList(List<Integer> list) {
-        LinkedList<Integer> listInt = new LinkedList<>();
-        listInt.addAll(list);
-        return listInt;
+        return new LinkedList<>(list);
     }
 
     static List<Integer> reverseNumbers(List<Integer> list) {
