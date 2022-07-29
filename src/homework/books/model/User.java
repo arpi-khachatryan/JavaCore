@@ -2,14 +2,14 @@ package homework.books.model;
 
 public class User {
     private String name;
-    private String surName;
+    private String surname;
     private String email;
     private String password;
     private Role role;
 
     public User(String name, String surName, String email, String password, Role role) {
         this.name = name;
-        this.surName = surName;
+        this.surname = surName;
         this.email = email;
         this.password = password;
         this.role = role;
@@ -26,12 +26,12 @@ public class User {
         this.name = name;
     }
 
-    public String getSurName() {
-        return surName;
+    public String getSurname() {
+        return surname;
     }
 
-    public void setSurName(String surName) {
-        this.surName = surName;
+    public void setSurname(String surName) {
+        this.surname = surname;
     }
 
     public String getEmail() {
@@ -62,7 +62,7 @@ public class User {
     public String toString() {
         return "User{" +
                 "name='" + name + '\'' +
-                ", surName='" + surName + '\'' +
+                ", surname='" + surname + '\'' +
                 ", email='" + email + '\'' +
                 ", role=" + role +
                 '}';
