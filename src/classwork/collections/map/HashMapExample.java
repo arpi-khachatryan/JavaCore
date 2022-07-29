@@ -1,4 +1,4 @@
-package classwork.map;
+package classwork.collections.map;
 
 import java.util.Collection;
 import java.util.HashMap;
