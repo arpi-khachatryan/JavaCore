@@ -1,4 +1,6 @@
-package classwork.map;
+package classwork.collections.comparator;
+
+import classwork.collections.comparator.User;
 
 import java.util.Comparator;
 
