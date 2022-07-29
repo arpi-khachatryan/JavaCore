@@ -84,7 +84,7 @@ public class BooksDemo implements Commands {
             if (userStorage.getUserByEmailAndPassword(userData[2]) == null) {
                 User user = new User();
                 user.setName(userData[0]);
-                user.setSurName(userData[1]);
+                user.setSurname(userData[1]);
                 user.setEmail(userData[2]);
                 user.setPassword(userData[3]);
                 user.setRegisteredRole(Role.USER);
