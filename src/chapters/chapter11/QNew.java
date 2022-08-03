@@ -12,7 +12,7 @@ public class QNew {
                 e.printStackTrace();
             }
         }
-        System.out.println(n);
+        System.out.println(n + "get");
         valueSet = false;
         notify();
         return n;
