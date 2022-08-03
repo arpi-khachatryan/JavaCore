@@ -20,23 +20,22 @@ public class CharArrayExample {
 
         // third
         char[] chars3 = {'i', 'a', 'v', 'a', 'l', 'o', 'l', 'y'};
+        boolean t = false;
         if (chars3[chars3.length - 2] == 'l' && chars3[chars3.length - 1] == 'y') {
-            System.out.println("true");
-        } else {
-            System.out.println("false");
+            t = true;
         }
+        System.out.println(t);
 
         // forth
         char[] bobArray = {'b', 'a', 'b', 'o', 'l', 'a'};
-        char name = 'b';
+        boolean b = false;
         for (int i = 0; i < bobArray.length - 2; i++) {
-            if (bobArray[i] == name && bobArray[i + 2] == name) {
-                System.out.println("true");
+            if (bobArray[i] == 'b' && bobArray[i + 2] == 'b') {
+                b = true;
                 break;
-            } else {
-                System.out.println("false");
             }
         }
+        System.out.println(b);
 
         // fifth
         char[] text = {' ', ' ', 'b', 'a', 'r', 'e', 'v', ' ', ' '};
