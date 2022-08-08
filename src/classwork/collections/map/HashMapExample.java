@@ -25,6 +25,7 @@ public class HashMapExample {
         for (Integer integer : integers) {
             System.out.println(integer);
         }
+
         System.out.println();
         Set<Map.Entry<Integer, String>> entries = namesMap.entrySet();
         for (Map.Entry<Integer, String> entry : entries) {
