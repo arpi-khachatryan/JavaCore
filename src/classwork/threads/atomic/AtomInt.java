@@ -1,4 +1,4 @@
-package classwork.atomic;
+package classwork.threads.atomic;
 
 import java.util.ArrayList;
 import java.util.List;
