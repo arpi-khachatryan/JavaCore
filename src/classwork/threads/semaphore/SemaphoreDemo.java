@@ -1,4 +1,4 @@
-package classwork.semaphore;
+package classwork.threads.semaphore;
 
 import java.util.ArrayList;
 import java.util.List;
