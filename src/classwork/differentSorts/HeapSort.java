@@ -1,7 +1,7 @@
 package classwork.differentSorts;
 
 public class HeapSort {
-    public static void heapSort(int arr[]) {
+    public static void heapSort(int[] arr) {
         int n = arr.length;
 
         for (int i = n / 2 - 1; i >= 0; i--) {// Build max heap
