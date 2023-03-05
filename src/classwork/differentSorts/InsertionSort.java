@@ -1,7 +1,7 @@
 package classwork.differentSorts;
 
 public class InsertionSort {
-    static void insertionSort(int arr[]) {
+    static void insertionSort(int[] arr) {
         int[] libraryNum = {124, 235, 456, 123, 756, 476, 285, 998, 379, 108};
 
         int count = 0;
