@@ -1,6 +1,7 @@
 package classwork.differentSorts;
 
 public class QuickSort {
+
     public static void mergeSort(int[] arr, int left, int right) {
         if (left < right) {
             int mean = (left + right) / 2;
