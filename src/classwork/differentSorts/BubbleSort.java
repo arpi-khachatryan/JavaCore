@@ -1,7 +1,7 @@
 package classwork.differentSorts;
 
 public class BubbleSort {
-    static void bubbleSort(int arr[]) {
+    static void bubbleSort(int[] arr) {
         int count = 0;
         boolean needIteration = true;
         while (needIteration) {
