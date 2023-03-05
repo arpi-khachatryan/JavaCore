@@ -1,6 +1,7 @@
 package classwork.differentSorts;
 
 public class RadixSort {
+
     static int findMax(int[] arr) {
         int maxItem = arr[0];
         for (int i = 1; i < arr.length; i++)
