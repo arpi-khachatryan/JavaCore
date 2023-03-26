@@ -15,6 +15,7 @@ public class CountDownLatchDemo {
 }
 
 class Work extends Thread {
+
     CountDownLatch countDownLatch;
 
     public Work(CountDownLatch countDownLatch) {
