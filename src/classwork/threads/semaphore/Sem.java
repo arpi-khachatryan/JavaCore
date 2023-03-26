@@ -4,6 +4,7 @@ import java.util.concurrent.Semaphore;
 
 public class Sem {
     public static void main(String[] args) {
+
         Semaphore table = new Semaphore(2);
 
         Person person = new Person();
@@ -23,7 +24,8 @@ public class Sem {
 }
 
 class Person extends Thread {
-    Semaphore table;
+
+  Semaphore table;
 
     @Override
     public void run() {
