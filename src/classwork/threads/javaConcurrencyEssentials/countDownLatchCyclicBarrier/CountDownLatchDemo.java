@@ -1,8 +1,9 @@
-package classwork.threads.countDownLatch;
+package classwork.threads.javaConcurrencyEssentials.countDownLatchCyclicBarrier;
 
 import java.util.concurrent.CountDownLatch;
 
 public class CountDownLatchDemo {
+
     public static void main(String[] args) throws InterruptedException {
         CountDownLatch countDownLatch = new CountDownLatch(3);
         new Work(countDownLatch);
