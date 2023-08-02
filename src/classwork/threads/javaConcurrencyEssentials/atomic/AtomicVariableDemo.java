@@ -1,4 +1,4 @@
-package classwork.threads.atomic;
+package classwork.threads.javaConcurrencyEssentials.atomic;
 
 import java.util.concurrent.atomic.AtomicInteger;
 
