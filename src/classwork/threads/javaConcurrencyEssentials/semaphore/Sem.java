@@ -1,4 +1,4 @@
-package classwork.threads.semaphore;
+package classwork.threads.javaConcurrencyEssentials.semaphore;
 
 import java.util.concurrent.Semaphore;
 
