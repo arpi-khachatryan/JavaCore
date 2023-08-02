@@ -1,4 +1,4 @@
-package classwork.threads.javaConcurrencyEssentials;
+package classwork.threads.javaConcurrencyEssentials.countDownLatchCyclicBarrier;
 
 import java.util.concurrent.BrokenBarrierException;
 import java.util.concurrent.CyclicBarrier;
@@ -6,6 +6,7 @@ import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
 class BarrierClass extends Thread {
+
     public static int bagsOfChips = 1; //start with one on the left
     private static Lock pencil = new ReentrantLock();
     private static CyclicBarrier firstBump = new CyclicBarrier(10);
